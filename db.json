@@ -1,0 +1,162 @@
+{
+  "peliculas" : [
+    {
+      "nombre" : "Asesino Sin Memoria",
+      "descripcion" : "El asesinato de un importante funcionario público conmociona a la policía de Amberes, que destina a dos de sus mejores investigadores para aclarar el caso. Las pistas conducen a Vincke y Verstuyft hasta un importante sicario, Angelo Ledda, un capo que empieza a sentir los efectos del alzheimer y al que cada vez le es más difícil cumplir con su trabajo. Cuando Ledda se da cuenta de que es una pieza dentro de una trama por el poder político, decide vengarse.",
+      "categoria" : "accion",
+      "duracion" : "1h 54m",
+      "portada" : "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcR41Z_arSi-B8N_ASiOSfs8IDO0blIthNQe27JhJFwxX9B0LqSI",
+      "direccion" : "Erik Van Looy",
+      "actores" : "Liam Neeson, Monica Belluci, Taj Atwal",
+      "ano" : 2022,
+      "clasificacion": "R"
+    },
+    {
+      "nombre" : "Tren Bala",
+      "descripcion" : "Cinco asesinos a sueldo se encuentran a bordo de un tren bala que viaja de Tokio a Morioka. Los sicarios descubrirán que sus misiones no son ajenas entre sí.",
+      "categoria" : "accion",
+      "duracion" : "2h 6m",
+      "portada" : "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTHrIPUMQFX9GD-MBs8s3lQXXu0B7t-nOW5xNDA5fNLv9o6QpAb",
+      "direccion" : "David Leitch",
+      "actores" : "Brad Pitt,Joey King, Aaron Taylor-Johnson",
+      "ano" : 2022,
+      "clasificacion": "R"
+    },
+    {
+      "nombre" : "",
+      "descripcion" : "",
+      "categoria" : "",
+      "duracion" : "",
+      "portada" : "",
+      "direccion" : "",
+      "actores" : "",
+      "ano" : "",
+      "clasificacion": ""
+    },
+    {
+      "nombre" : "",
+      "descripcion" : "",
+      "categoria" : "",
+      "duracion" : "",
+      "portada" : "",
+      "direccion" : "",
+      "actores" : "",
+      "ano" : "",
+      "clasificacion": ""
+    },
+    {
+      "nombre" : "",
+      "descripcion" : "",
+      "categoria" : "",
+      "duracion" : "",
+      "portada" : "",
+      "direccion" : "",
+      "actores" : "",
+      "ano" : "",
+      "clasificacion": ""
+    },
+    {
+      "nombre" : "",
+      "descripcion" : "",
+      "categoria" : "",
+      "duracion" : "",
+      "portada" : "",
+      "direccion" : "",
+      "actores" : "",
+      "ano" : "",
+      "clasificacion": ""
+    },
+    {
+      "nombre" : "",
+      "descripcion" : "",
+      "categoria" : "",
+      "duracion" : "",
+      "portada" : "",
+      "direccion" : "",
+      "actores" : "",
+      "ano" : "",
+      "clasificacion": ""
+    },
+    {
+      "nombre" : "",
+      "descripcion" : "",
+      "categoria" : "",
+      "duracion" : "",
+      "portada" : "",
+      "direccion" : "",
+      "actores" : "",
+      "ano" : "",
+      "clasificacion": ""
+    },
+    {
+      "nombre" : "",
+      "descripcion" : "",
+      "categoria" : "",
+      "duracion" : "",
+      "portada" : "",
+      "direccion" : "",
+      "actores" : "",
+      "ano" : "",
+      "clasificacion": ""
+    },
+    {
+      "nombre" : "",
+      "descripcion" : "",
+      "categoria" : "",
+      "duracion" : "",
+      "portada" : "",
+      "direccion" : "",
+      "actores" : "",
+      "ano" : "",
+      "clasificacion": ""
+    },
+    {
+      "nombre" : "",
+      "descripcion" : "",
+      "categoria" : "",
+      "duracion" : "",
+      "portada" : "",
+      "direccion" : "",
+      "actores" : "",
+      "ano" : "",
+      "clasificacion": ""
+    },
+    {
+      "nombre" : "",
+      "descripcion" : "",
+      "categoria" : "",
+      "duracion" : "",
+      "portada" : "",
+      "direccion" : "",
+      "actores" : "",
+      "ano" : "",
+      "clasificacion": ""
+    },
+    {
+      "nombre" : "",
+      "descripcion" : "",
+      "categoria" : "",
+      "duracion" : "",
+      "portada" : "",
+      "direccion" : "",
+      "actores" : "",
+      "ano" : "",
+      "clasificacion": ""
+    },
+    {
+      "nombre" : "",
+      "descripcion" : "",
+      "categoria" : "",
+      "duracion" : "",
+      "portada" : "",
+      "direccion" : "",
+      "actores" : "",
+      "ano" : "",
+      "clasificacion": ""
+    }
+
+
+
+  ],
+  "usuarios" : []
+}
