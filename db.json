@@ -9,7 +9,8 @@
       "direccion" : "Erik Van Looy",
       "actores" : "Liam Neeson, Monica Belluci, Taj Atwal",
       "ano" : 2022,
-      "clasificacion": "R"
+      "clasificacion": "R",
+      "id" : 1
     },
     {
       "nombre" : "Tren Bala",
@@ -20,7 +21,104 @@
       "direccion" : "David Leitch",
       "actores" : "Brad Pitt,Joey King, Aaron Taylor-Johnson",
       "ano" : 2022,
-      "clasificacion": "R"
+      "clasificacion": "R",
+      "id" : 2
+    },
+    {
+      "nombre" : "Top Gun: Maverick",
+      "descripcion" : "Maverick, quien lleva 30 años de servicio, es ahora instructor de pilotos militares. Una última misión, un sacrificio final, obliga a este maestro de los cielos a enfrentar las heridas abiertas del pasado y sus temores más profundos.",
+      "categoria" : "accion",
+      "duracion" : "2h 11m",
+      "portada" : "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTcs08NfPcTiqiAOMdeS_Oe8XMgZMiBuL0S5mURdK1C8rmbtxeE",
+      "direccion" : "Joseph Kosinski",
+      "actores" : "Tom Cruise, Val Kilmer, Miles Teller",
+      "ano" : 2022,
+      "clasificacion": "PG-13",
+      "id" : 3
+    },
+    {
+      "nombre" : "Justicia implacable",
+      "descripcion" : "Harry es el misterioso tipo que se incorpora como guardia de seguridad en una compañía de blindados. Durante un intento de atraco a su camión, sorprende a sus compañeros mostrando habilidades de un soldado profesional, dejando al resto preguntándose quién es realmente y de dónde viene. Pronto se hará claro el verdadero motivo por el cual Harry está buscando un ajuste de cuentas.",
+      "categoria" : "accion",
+      "duracion" : "1h 58m",
+      "portada" : "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQVSBp83XKjBuHV804f6JOIdFcgb_ItMPZAzCwMFxAAIqXH7H-L",
+      "direccion" : "Guy Ritchie",
+      "actores" : "Jason Statham, Holt McCallany, Rocci Williams",
+      "ano" : 2021,
+      "clasificacion": "R",
+      "id" : 4
+    },
+    {
+      "nombre" : "The Gray Man",
+      "descripcion" : "Fitzroy le ofrece al hombre su libertad a cambio de trabajar como asesino en el programa Sierra de la CIA. En 2021, en una misión en Bangkok, el asesino, 'Sierra Six', está trabajando con su compañero agente de la CIA Dani Miranda para asesinar a un objetivo sospechoso de vender secretos de seguridad nacional.",
+      "categoria" : "accion",
+      "duracion" : "2h 2m",
+      "portada" : "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQQuocZBjBLb61E0fujWx2-Kj3brilD6VEJ9QzxgTt9lAXHHF2M",
+      "direccion" : "Anthony Russo, Joe Russo",
+      "actores" : "Ryan Gosling, Chris Evans, Ana de Armas",
+      "ano" : 2022,
+      "clasificacion": "PG-13",
+      "id" : 5
+    },
+    {
+      "nombre" : "Avengers: Endgame",
+      "descripcion" : "Después de los eventos devastadores de 'Avengers: Infinity War', el universo está en ruinas debido a las acciones de Thanos, el Titán Loco. Con la ayuda de los aliados que quedaron, los Vengadores deberán reunirse una vez más para intentar detenerlo y restaurar el orden en el universo de una vez por todas.",
+      "categoria" : "accion",
+      "duracion" : "3h 2m",
+      "portada" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSiC3mSrAdG2_Tkuz5CbCm2TA-wYikac3dOPVlzb5jCk1gqsHOD",
+      "direccion" : "Anthony y Joe Russo",
+      "actores" : "Robert Downey Jr, Chris Evans, Chris Hemsworth",
+      "ano" : 2019,
+      "clasificacion": "PG-13",
+      "id" : 6
+    },
+    {
+      "nombre" : "Misión de rescate",
+      "descripcion" : "Tyler Rake, un intrépido mercenario, es enviado a Bangladesh por un poderoso mafioso encarcelado para que salve a su hijo secuestrado.",
+      "categoria" : "accion",
+      "duracion" : "1h 56m",
+      "portada" : "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcTpch8o_WnAvTEtr08QFCcG0ViF76_AAIzpJg6DyJdw8Ir-kNGx",
+      "direccion" : "Sam Hargrave",
+      "actores" : "Chris Hemsworth, Rudhraksh Jaiswal, Randeep Hooda",
+      "ano" : 2020,
+      "clasificacion": "R",
+      "id" : 7
+    },
+    {
+      "nombre" : "Red Notice",
+      "descripcion" : "John Hartley, agente de la Interpol, no tendrá otro remedio que aliarse con el ladrón de arte más célebre de todos los tiempos, Nolan Booth, para capturar a la ladrona de arte más buscada del presente: la seductora y peligrosa Sarah Black.",
+      "categoria" : "accion",
+      "duracion" : "1h 58m",
+      "portada" : "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSmRKlWoPIs9SVlKAYoQ8rne0ENOdcXBl8i6JaFVMgr9gcsvPmw",
+      "direccion" : "Rawson Marshall Thurber",
+      "actores" : "Dwayne Johnson, Gal Gadot, Ryan Reynolds",
+      "ano" : 2021,
+      "clasificacion": "PG-13",
+      "id" : 8
+    },
+    {
+      "nombre" : "Yakuza Princess HD",
+      "descripcion" : "Thriller de acción y venganza. Akemi, la heredera de la mayor parte del sindicato Yakuza, forja una incómoda alianza con un desconocido (Jonathan Rhys Meyers) cuando él despierta en un hospital sin recordar nada, pero con una antigua katana que pertenece al abuelo de Akemi. Él está convencido que esta misteriosa espada une sus destinos y Akemi, para poder sobrevivir, tendrá que desatar la guerra contra la otra mitad de la Yakuza, que la quiere la katana y acabar con su vida.",
+      "categoria" : "accion",
+      "duracion" : "1h 52m",
+      "portada" : "https://www.youplanetpictures.com/wp-content/uploads/2022/03/AMAZON-1200x1600-4.jpg",
+      "direccion" : "Vicente Amorim",
+      "actores" : "MASUMI, Jonathan Rhys Meyers",
+      "ano" : 2021,
+      "clasificacion": "R",
+      "id" : 9
+    },
+    {
+      "nombre" : "Tomb Raider: las aventuras de Lara Croft",
+      "descripcion" : "Nueva adaptación de uno de los personajes de videojuegos más famosos de la historia. La joven Lara Croft, cansada de malvivir trabajando como mensajera en bicicleta, lo abandona todo y parte en busca de su padre, un aventurero que desapareció en una isla legendaria en la costa de Japón.",
+      "categoria" : "accion",
+      "duracion" : "1h 58m",
+      "portada" : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTrX3YHyjUaaLTP4KWzmMzR0tUYmkhg6FrU0LmccmkfYO-Yk76M",
+      "direccion" : "Roar Uthaug",
+      "actores" : "Alicia Vikander, Dominic West, Walton Goggins",
+      "ano" : 2018,
+      "clasificacion": "PG-13",
+      "id" : 10
     },
     {
       "nombre" : "",
@@ -31,7 +129,8 @@
       "direccion" : "",
       "actores" : "",
       "ano" : "",
-      "clasificacion": ""
+      "clasificacion": "",
+      "id" : 11
     },
     {
       "nombre" : "",
@@ -42,7 +141,8 @@
       "direccion" : "",
       "actores" : "",
       "ano" : "",
-      "clasificacion": ""
+      "clasificacion": "",
+      "id" : 12
     },
     {
       "nombre" : "",
@@ -53,7 +153,8 @@
       "direccion" : "",
       "actores" : "",
       "ano" : "",
-      "clasificacion": ""
+      "clasificacion": "",
+      "id" : 13
     },
     {
       "nombre" : "",
@@ -64,7 +165,8 @@
       "direccion" : "",
       "actores" : "",
       "ano" : "",
-      "clasificacion": ""
+      "clasificacion": "",
+      "id" : 14
     },
     {
       "nombre" : "",
@@ -75,7 +177,8 @@
       "direccion" : "",
       "actores" : "",
       "ano" : "",
-      "clasificacion": ""
+      "clasificacion": "",
+      "id" : 15
     },
     {
       "nombre" : "",
@@ -86,7 +189,8 @@
       "direccion" : "",
       "actores" : "",
       "ano" : "",
-      "clasificacion": ""
+      "clasificacion": "",
+      "id" : 16
     },
     {
       "nombre" : "",
@@ -97,7 +201,8 @@
       "direccion" : "",
       "actores" : "",
       "ano" : "",
-      "clasificacion": ""
+      "clasificacion": "",
+      "id" : 17
     },
     {
       "nombre" : "",
@@ -108,7 +213,8 @@
       "direccion" : "",
       "actores" : "",
       "ano" : "",
-      "clasificacion": ""
+      "clasificacion": "",
+      "id" : 18
     },
     {
       "nombre" : "",
@@ -119,7 +225,8 @@
       "direccion" : "",
       "actores" : "",
       "ano" : "",
-      "clasificacion": ""
+      "clasificacion": "",
+      "id" : 19
     },
     {
       "nombre" : "",
@@ -130,7 +237,8 @@
       "direccion" : "",
       "actores" : "",
       "ano" : "",
-      "clasificacion": ""
+      "clasificacion": "",
+      "id" : 20
     },
     {
       "nombre" : "",
@@ -141,7 +249,8 @@
       "direccion" : "",
       "actores" : "",
       "ano" : "",
-      "clasificacion": ""
+      "clasificacion": "",
+      "id" : 21
     },
     {
       "nombre" : "",
@@ -152,7 +261,8 @@
       "direccion" : "",
       "actores" : "",
       "ano" : "",
-      "clasificacion": ""
+      "clasificacion": "",
+      "id" : 22
     },
     {
       "nombre" : "",
@@ -163,7 +273,8 @@
       "direccion" : "",
       "actores" : "",
       "ano" : "",
-      "clasificacion": ""
+      "clasificacion": "",
+      "id" : 23
     },
     {
       "nombre" : "",
@@ -174,7 +285,8 @@
       "direccion" : "",
       "actores" : "",
       "ano" : "",
-      "clasificacion": ""
+      "clasificacion": "",
+      "id" : 24
     },
     {
       "nombre" : "",
@@ -185,7 +297,8 @@
       "direccion" : "",
       "actores" : "",
       "ano" : "",
-      "clasificacion": ""
+      "clasificacion": "",
+      "id" : 25
     },
     {
       "nombre" : "",
@@ -196,7 +309,8 @@
       "direccion" : "",
       "actores" : "",
       "ano" : "",
-      "clasificacion": ""
+      "clasificacion": "",
+      "id" : 26
     },
     {
       "nombre" : "",
@@ -207,7 +321,8 @@
       "direccion" : "",
       "actores" : "",
       "ano" : "",
-      "clasificacion": ""
+      "clasificacion": "",
+      "id" : 27
     },
     {
       "nombre" : "",
@@ -218,7 +333,8 @@
       "direccion" : "",
       "actores" : "",
       "ano" : "",
-      "clasificacion": ""
+      "clasificacion": "",
+      "id" : 28
     },
     {
       "nombre" : "",
@@ -229,7 +345,8 @@
       "direccion" : "",
       "actores" : "",
       "ano" : "",
-      "clasificacion": ""
+      "clasificacion": "",
+      "id" : 29
     },
     {
       "nombre" : "",
@@ -240,7 +357,8 @@
       "direccion" : "",
       "actores" : "",
       "ano" : "",
-      "clasificacion": ""
+      "clasificacion": "",
+      "id" : 30
     },
     {
       "nombre" : "",
@@ -251,7 +369,8 @@
       "direccion" : "",
       "actores" : "",
       "ano" : "",
-      "clasificacion": ""
+      "clasificacion": "",
+      "id" : 31
     },
     {
       "nombre" : "",
@@ -262,7 +381,8 @@
       "direccion" : "",
       "actores" : "",
       "ano" : "",
-      "clasificacion": ""
+      "clasificacion": "",
+      "id" : 32
     },
     {
       "nombre" : "",
@@ -273,7 +393,8 @@
       "direccion" : "",
       "actores" : "",
       "ano" : "",
-      "clasificacion": ""
+      "clasificacion": "",
+      "id" : 33
     },
     {
       "nombre" : "",
@@ -284,7 +405,8 @@
       "direccion" : "",
       "actores" : "",
       "ano" : "",
-      "clasificacion": ""
+      "clasificacion": "",
+      "id" : 34
     },
     {
       "nombre" : "",
@@ -295,7 +417,8 @@
       "direccion" : "",
       "actores" : "",
       "ano" : "",
-      "clasificacion": ""
+      "clasificacion": "",
+      "id" : 35
     },
     {
       "nombre" : "",
@@ -306,7 +429,8 @@
       "direccion" : "",
       "actores" : "",
       "ano" : "",
-      "clasificacion": ""
+      "clasificacion": "",
+      "id" : 36
     },
     {
       "nombre" : "",
@@ -317,7 +441,8 @@
       "direccion" : "",
       "actores" : "",
       "ano" : "",
-      "clasificacion": ""
+      "clasificacion": "",
+      "id" : 37
     },
     {
       "nombre" : "",
@@ -328,7 +453,8 @@
       "direccion" : "",
       "actores" : "",
       "ano" : "",
-      "clasificacion": ""
+      "clasificacion": "",
+      "id" : 38
     },
     {
       "nombre" : "",
@@ -339,7 +465,8 @@
       "direccion" : "",
       "actores" : "",
       "ano" : "",
-      "clasificacion": ""
+      "clasificacion": "",
+      "id" : 39
     },
     {
       "nombre" : "",
@@ -350,7 +477,8 @@
       "direccion" : "",
       "actores" : "",
       "ano" : "",
-      "clasificacion": ""
+      "clasificacion": "",
+      "id" : 40
     },
     {
       "nombre" : "",
@@ -361,7 +489,8 @@
       "direccion" : "",
       "actores" : "",
       "ano" : "",
-      "clasificacion": ""
+      "clasificacion": "",
+      "id" : 41
     },
     {
       "nombre" : "",
@@ -372,7 +501,8 @@
       "direccion" : "",
       "actores" : "",
       "ano" : "",
-      "clasificacion": ""
+      "clasificacion": "",
+      "id" : 42
     },
     {
       "nombre" : "",
@@ -383,7 +513,8 @@
       "direccion" : "",
       "actores" : "",
       "ano" : "",
-      "clasificacion": ""
+      "clasificacion": "",
+      "id" : 43
     },
     {
       "nombre" : "",
@@ -394,7 +525,8 @@
       "direccion" : "",
       "actores" : "",
       "ano" : "",
-      "clasificacion": ""
+      "clasificacion": "",
+      "id" : 44
     },
     {
       "nombre" : "",
@@ -405,7 +537,8 @@
       "direccion" : "",
       "actores" : "",
       "ano" : "",
-      "clasificacion": ""
+      "clasificacion": "",
+      "id" : 45
     },
     {
       "nombre" : "",
@@ -416,7 +549,8 @@
       "direccion" : "",
       "actores" : "",
       "ano" : "",
-      "clasificacion": ""
+      "clasificacion": "",
+      "id" : 46
     },
     {
       "nombre" : "",
@@ -427,7 +561,8 @@
       "direccion" : "",
       "actores" : "",
       "ano" : "",
-      "clasificacion": ""
+      "clasificacion": "",
+      "id" : 47
     },
     {
       "nombre" : "",
@@ -438,7 +573,8 @@
       "direccion" : "",
       "actores" : "",
       "ano" : "",
-      "clasificacion": ""
+      "clasificacion": "",
+      "id" : 48
     },
     {
       "nombre" : "",
@@ -449,7 +585,8 @@
       "direccion" : "",
       "actores" : "",
       "ano" : "",
-      "clasificacion": ""
+      "clasificacion": "",
+      "id" : 49
     },
     {
       "nombre" : "",
@@ -460,95 +597,8 @@
       "direccion" : "",
       "actores" : "",
       "ano" : "",
-      "clasificacion": ""
-    },
-    {
-      "nombre" : "",
-      "descripcion" : "",
-      "categoria" : "",
-      "duracion" : "",
-      "portada" : "",
-      "direccion" : "",
-      "actores" : "",
-      "ano" : "",
-      "clasificacion": ""
-    },
-    {
-      "nombre" : "",
-      "descripcion" : "",
-      "categoria" : "",
-      "duracion" : "",
-      "portada" : "",
-      "direccion" : "",
-      "actores" : "",
-      "ano" : "",
-      "clasificacion": ""
-    },
-    {
-      "nombre" : "",
-      "descripcion" : "",
-      "categoria" : "",
-      "duracion" : "",
-      "portada" : "",
-      "direccion" : "",
-      "actores" : "",
-      "ano" : "",
-      "clasificacion": ""
-    },
-    {
-      "nombre" : "",
-      "descripcion" : "",
-      "categoria" : "",
-      "duracion" : "",
-      "portada" : "",
-      "direccion" : "",
-      "actores" : "",
-      "ano" : "",
-      "clasificacion": ""
-    },
-    {
-      "nombre" : "",
-      "descripcion" : "",
-      "categoria" : "",
-      "duracion" : "",
-      "portada" : "",
-      "direccion" : "",
-      "actores" : "",
-      "ano" : "",
-      "clasificacion": ""
-    },
-    {
-      "nombre" : "",
-      "descripcion" : "",
-      "categoria" : "",
-      "duracion" : "",
-      "portada" : "",
-      "direccion" : "",
-      "actores" : "",
-      "ano" : "",
-      "clasificacion": ""
-    },
-    {
-      "nombre" : "",
-      "descripcion" : "",
-      "categoria" : "",
-      "duracion" : "",
-      "portada" : "",
-      "direccion" : "",
-      "actores" : "",
-      "ano" : "",
-      "clasificacion": ""
-    },
-    {
-      "nombre" : "",
-      "descripcion" : "",
-      "categoria" : "",
-      "duracion" : "",
-      "portada" : "",
-      "direccion" : "",
-      "actores" : "",
-      "ano" : "",
-      "clasificacion": ""
+      "clasificacion": "",
+      "id" : 50
     }
 
   ],
@@ -558,35 +608,40 @@
       "usuario" : "",
       "contrasena" : "",
       "tipo" : "",
-      "estado" : ""
+      "estado" : "",
+      "id" : 1
     },
     {
       "nombre" : "",
       "usuario" : "",
       "contrasena" : "",
       "tipo" : "",
-      "estado" : ""
+      "estado" : "",
+      "id" : 2
     },
     {
       "nombre" : "",
       "usuario" : "",
       "contrasena" : "",
       "tipo" : "",
-      "estado" : ""
+      "estado" : "",
+      "id" : 3
     },
     {
       "nombre" : "",
       "usuario" : "",
       "contrasena" : "",
       "tipo" : "",
-      "estado" : ""
+      "estado" : "",
+      "id" : 4
     },
     {
       "nombre" : "",
       "usuario" : "",
       "contrasena" : "",
       "tipo" : "",
-      "estado" : ""
+      "estado" : "",
+      "id" : 5
     }
   ]
 }
