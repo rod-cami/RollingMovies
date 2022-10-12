@@ -1,8 +1,10 @@
-console.log('Funciona');
 
-fetch('http://localhost:3000/peliculas/2')
-  .then(response => response.json())
-  .then(json => console.log(json));
+
+const obtenerUnaPelicula = async (id) =>{
+  const resultado = await fetch(`http://localhost:3000/peliculas/${id}`);
+  const pelicula = await resultado.json();
+  return pelicula;
+}
 
 const obtenerPeliculas = async () =>{
   const resultado = await fetch('http://localhost:3000/peliculas');
@@ -32,7 +34,6 @@ const agregarPelicula = async (nombre, descripcion,categoria,duracion,portada,di
   }) 
 
   const res = await resultado.json();
-  console.log(res);
 }
 
 const crearPelicula = async () =>{
@@ -67,7 +68,7 @@ const crearTablaPeliculas = async () =>{
       <td>
       <button type="button" class="btn btn-danger m-1" onclick="eliminarPelicula(${pelicula.id})"><i class="bi bi-trash"></i></button>
       <button type="button" class="btn btn-info m-1" onclick="modificarPelicula(${pelicula.id})" data-bs-toggle="modal" data-bs-target="#myModal"><i class="bi bi-pencil text-white"></i></button>
-      <button type="button" class="btn btn-warning m-1"><i class="bi bi-star text-white"></i></button>
+      <button type="button" class="btn btn-warning m-1" onclick="seleccionarFavorito(${pelicula.id})"><i class="bi bi-star text-white"></i></button>
       </td>
     </tr>
     `
@@ -80,11 +81,58 @@ crearTablaPeliculas();
 
 
 const modificarPelicula = async (id) =>{
-  let peliculas = await obtenerPeliculas();
+  let pelicula = await obtenerUnaPelicula(id);
   const formModificar = document.getElementById('formModificarPelicula')
 
-  const form = peliculas
-
+  const form = (
+    `
+    <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="inputFormNombre" value="${pelicula.nombre}">
+        <label for="floatingInput">Nombre</label>
+      </div>
+      <div class="form-floating">
+        <input type="text" class="form-control" id="inputFormDescripcion" value="${pelicula.descripcion}">
+        <label for="floatingPassword">Descripcion</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="inputFormAno" value="${pelicula.ano}">
+        <label for="floatingInput">Año de Estreno</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="inputFormCategoria" value="${pelicula.categoria}">
+        <label for="floatingInput">Categoria</label>
+      </div>
+      <div class="form-floating">
+        <input type="text" class="form-control" id="inputFormDuracion" value="${pelicula.duracion}">
+        <label for="floatingPassword">Duración</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="inputFormPortada" value="${pelicula.portada}">
+        <label for="floatingInput">Imagen de Portada</label>
+      </div>
+      <div class="form-floating">
+        <input type="text" class="form-control" id="inputFormDireccion" value="${pelicula.direccion}">
+        <label for="floatingPassword">Direccion</label>
+      </div>
+      <div class="form-floating mb-3">
+        <input type="text" class="form-control" id="inputFormActores" value="${pelicula.actores}">
+        <label for="floatingInput">Actores</label>
+      </div>
+      <div class="form-floating">
+        <input type="text" class="form-control" id="inputFormClasificacion" value="${pelicula.clasificacion}">
+        <label for="floatingPassword">Clasificacion</label>
+      </div>
+      <div class="form-floating">
+        <input type="text" class="form-control" id="inputFormClasificacion" value="${pelicula.estado}">
+        <label for="floatingPassword">Estado</label>
+      </div>
+      <div class="col-auto">
+        <button type="button" class="btn btn-primary mb-3" onclick="changePelicula(${pelicula.id})">Modificar</button>
+      </div>
+    `
+  )
+  
+  formModificar.innerHTML = form;
 }
 
 const borrarPelicula = async (id) =>{
@@ -99,17 +147,48 @@ const eliminarPelicula = async (id) => {
   crearTablaPeliculas();
 }
 
-const changePelicula = (id) => {
-  fetch(`http://localhost:3000/peliculas/${id}`, {
-    method: 'PATCH',
+const changePelicula = async (id) => {
+  let nombre = document.getElementById("inputFormNombre").value;
+  let descripcion = document.getElementById("inputFormDescripcion").value;
+  let categoria = document.getElementById("inputFormCategoria").value;
+  let duracion = document.getElementById("inputFormDuracion").value;
+  let portada = document.getElementById("inputFormPortada").value;
+  let direccion = document.getElementById("inputFormDireccion").value;
+  let actores = document.getElementById("inputFormActores").value;
+  let ano = document.getElementById("inputFormAno").value;
+  let clasificacion = document.getElementById("inputFormClasificacion").value;
+  let estado = true;
+  let favorito = false;
+
+  await fetch(`http://localhost:3000/peliculas/${id}`, {
+    method: 'PUT',
     body: JSON.stringify({
-      nombre: "Peliculon",
+      nombre: nombre,
+      descripcion: descripcion,
+      categoria: categoria,
+      duracion: duracion,
+      portada: portada,
+      direccion: direccion,
+      actores: actores,
+      ano: ano,
+      clasificacion: clasificacion,
+      estado: estado,
+      favorito: favorito
     }),
     headers: {
       'Content-type': 'application/json; charset=UTF-8',
     },
   })
-    .then((response) => response.json())
-    .then((json) => console.log(json));
 }
 
+const seleccionarFavorito = async (id) =>{
+  await fetch(`http://localhost:3000/peliculas/${id}`, {
+    method: 'PATCH',
+    body: JSON.stringify({
+      favorito: true
+    }),
+    headers: {
+      'Content-type': 'application/json; charset=UTF-8',
+    },
+  })
+}

@@ -12,47 +12,64 @@
 </head>
 <body>
   <main>
-    <!-- <form class="form-floating">
-      <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="inputPostNombre">
-        <label for="floatingInput">Nombre</label>
+    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">Agregar</button>
+    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <form class="form-floating">
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="inputPostNombre">
+                <label for="floatingInput">Nombre</label>
+              </div>
+              <div class="form-floating">
+                <input type="text" class="form-control" id="inputPostDescripcion">
+                <label for="floatingPassword">Descripcion</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="inputPostAno">
+                <label for="floatingInput">Año de Estreno</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="inputPostCategoria">
+                <label for="floatingInput">Categoria</label>
+              </div>
+              <div class="form-floating">
+                <input type="text" class="form-control" id="inputPostDuracion">
+                <label for="floatingPassword">Duración</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="inputPostPortada">
+                <label for="floatingInput">Imagen de Portada</label>
+              </div>
+              <div class="form-floating">
+                <input type="text" class="form-control" id="inputPostDireccion">
+                <label for="floatingPassword">Direccion</label>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="inputPostActores">
+                <label for="floatingInput">Actores</label>
+              </div>
+              <div class="form-floating">
+                <input type="text" class="form-control" id="inputPostClasificacion">
+                <label for="floatingPassword">Clasificacion</label>
+              </div>
+              <div class="col-auto">
+                <button type="button" class="btn btn-primary mb-3" onclick="crearPelicula()">Enviar</button>
+              </div>
+            </form> 
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary">Save changes</button>
+          </div>
+        </div>
       </div>
-      <div class="form-floating">
-        <input type="text" class="form-control" id="inputPostDescripcion">
-        <label for="floatingPassword">Descripcion</label>
-      </div>
-      <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="inputPostAno">
-        <label for="floatingInput">Año de Estreno</label>
-      </div>
-      <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="inputPostCategoria">
-        <label for="floatingInput">Categoria</label>
-      </div>
-      <div class="form-floating">
-        <input type="text" class="form-control" id="inputPostDuracion">
-        <label for="floatingPassword">Duración</label>
-      </div>
-      <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="inputPostPortada">
-        <label for="floatingInput">Imagen de Portada</label>
-      </div>
-      <div class="form-floating">
-        <input type="text" class="form-control" id="inputPostDireccion">
-        <label for="floatingPassword">Direccion</label>
-      </div>
-      <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="inputPostActores">
-        <label for="floatingInput">Actores</label>
-      </div>
-      <div class="form-floating">
-        <input type="text" class="form-control" id="inputPostClasificacion">
-        <label for="floatingPassword">Clasificacion</label>
-      </div>
-      <div class="col-auto">
-        <button type="button" class="btn btn-primary mb-3" onclick="crearPelicula()">Enviar</button>
-      </div>
-    </form> -->
+    </div>
 
     <table class="table w-75 mx-auto">
       <thead>
