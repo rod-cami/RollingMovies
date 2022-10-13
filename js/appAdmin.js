@@ -1,5 +1,27 @@
 
 
+let nombre = document.getElementById("inputPostNombre");
+let descripcion = document.getElementById("inputPostDescripcion");
+let categoria = document.getElementById("inputPostCategoria");
+let duracion = document.getElementById("inputPostDuracion");
+let portada = document.getElementById("inputPostPortada");
+let direccion = document.getElementById("inputPostDireccion");
+let actores = document.getElementById("inputPostActores");
+let ano = document.getElementById("inputPostAno");
+let clasificacion = document.getElementById("inputPostClasificacion");
+let formulario = document.getElementById("formularioPost");
+
+nombre.addEventListener('blur', ()=>{validarNombre(nombre)});
+descripcion.addEventListener('blur', ()=>{validarDescripcion(descripcion)});
+categoria.addEventListener('blur', ()=>{validarCategoria(categoria)});
+duracion.addEventListener('blur', ()=>{validarDuracion(duracion)});
+portada.addEventListener('blur', ()=>{validarPortada(portada)});
+direccion.addEventListener('blur', ()=>{validarDireccion(direccion)});
+actores.addEventListener('blur', ()=>{validarActores(actores)});
+ano.addEventListener('blur', ()=>{validarAno(ano)});
+clasificacion.addEventListener('blur', ()=>{validarClasificacion(clasificacion)});
+formulario.addEventListener('submit', crearPelicula);
+
 const obtenerUnaPelicula = async (id) =>{
   const resultado = await fetch(`http://localhost:3000/peliculas/${id}`);
   const pelicula = await resultado.json();
@@ -13,7 +35,7 @@ const obtenerPeliculas = async () =>{
 }
 
 const agregarPelicula = async (nombre, descripcion,categoria,duracion,portada,direccion,actores,ano,clasificacion,estado,favorito) =>{
-  const resultado = await fetch('http://localhost:3000/peliculas',{
+  await fetch('http://localhost:3000/peliculas',{
     method: 'POST',
     body: JSON.stringify({
       nombre: nombre,
@@ -32,29 +54,28 @@ const agregarPelicula = async (nombre, descripcion,categoria,duracion,portada,di
       'Content-type': 'application/json; charset=UTF-8'
     },
   }) 
-
-  const res = await resultado.json();
+    .then(response => response.json())
+    .then(json => console.log(json))
 }
 
-const crearPelicula = async () =>{
-  let nombre = document.getElementById("inputPostNombre").value;
-  let descripcion = document.getElementById("inputPostDescripcion").value;
-  let categoria = document.getElementById("inputPostCategoria").value;
-  let duracion = document.getElementById("inputPostDuracion").value;
-  let portada = document.getElementById("inputPostPortada").value;
-  let direccion = document.getElementById("inputPostDireccion").value;
-  let actores = document.getElementById("inputPostActores").value;
-  let ano = document.getElementById("inputPostAno").value;
-  let clasificacion = document.getElementById("inputPostClasificacion").value;
+async function crearPelicula(e){
+
+  e.preventDefault();
+
   let estado = true;
   let favorito = false;
-  await agregarPelicula(nombre,descripcion,categoria,duracion,portada,direccion,actores,ano,clasificacion,estado,favorito);
+
+  if (validarNombre(nombre) && validarActores(actores) && validarAno(ano) && validarCategoria(categoria) && validarClasificacion(clasificacion) && validarDescripcion(descripcion) && validarDireccion(direccion) && validarDuracion(duracion) && validarPortada(portada)) {
+    await agregarPelicula(nombre.value,descripcion.value,categoria.value,duracion.value,portada.value,direccion.value,actores.value,ano.value,clasificacion.value,estado,favorito);
+  } else {
+    console.log('salio mal algo')
+  }
 }
 
 
 const crearTablaPeliculas = async () =>{
   let peliculas = await obtenerPeliculas();
-  console.log(peliculas);
+  console.log('hola');
   const cuerpoTabla = document.getElementById("tablaBodyListarPeliculas");
 
   let cuerpo = peliculas.map(pelicula =>(
@@ -67,20 +88,20 @@ const crearTablaPeliculas = async () =>{
       <td>${pelicula.estado}</td>
       <td>
       <button type="button" class="btn btn-danger m-1" onclick="eliminarPelicula(${pelicula.id})"><i class="bi bi-trash"></i></button>
-      <button type="button" class="btn btn-info m-1" onclick="modificarPelicula(${pelicula.id})" data-bs-toggle="modal" data-bs-target="#myModal"><i class="bi bi-pencil text-white"></i></button>
+      <button type="button" class="btn btn-info m-1" onclick="modificarPelicula(${pelicula.id})" data-bs-toggle="modal" data-bs-target="#modalModificarPelicula"><i class="bi bi-pencil text-white"></i></button>
       <button type="button" class="btn btn-warning m-1" onclick="seleccionarFavorito(${pelicula.id})"><i class="bi bi-star text-white"></i></button>
       </td>
     </tr>
     `
   ))
-
+  
+  console.log('hola2');
   cuerpoTabla.innerHTML = cuerpo;
 }
 
-crearTablaPeliculas();
-
-
-const modificarPelicula = async (id) =>{
+async function modificarPelicula(id){
+  
+  console.log('hola3');
   let pelicula = await obtenerUnaPelicula(id);
   const formModificar = document.getElementById('formModificarPelicula')
 
@@ -127,7 +148,7 @@ const modificarPelicula = async (id) =>{
         <label for="floatingPassword">Estado</label>
       </div>
       <div class="col-auto">
-        <button type="button" class="btn btn-primary mb-3" onclick="changePelicula(${pelicula.id})">Modificar</button>
+        <button type="button" class="btn btn-primary mb-3" onclick="cambiarPelicula(${pelicula.id})">Modificar</button>
       </div>
     `
   )
@@ -147,7 +168,7 @@ const eliminarPelicula = async (id) => {
   crearTablaPeliculas();
 }
 
-const changePelicula = async (id) => {
+const cambiarPelicula = async (id) => {
   let nombre = document.getElementById("inputFormNombre").value;
   let descripcion = document.getElementById("inputFormDescripcion").value;
   let categoria = document.getElementById("inputFormCategoria").value;
@@ -191,4 +212,108 @@ const seleccionarFavorito = async (id) =>{
       'Content-type': 'application/json; charset=UTF-8',
     },
   })
+}
+
+crearTablaPeliculas();
+
+function validarNombre(input) {
+  if (input.value.length >=2 && input.value.length <= 100) {
+    input.className = 'form-control is-valid';
+    return true
+  }else{
+    input.className = 'form-control is-invalid';
+    return false
+  }
+}
+
+function validarDescripcion(input) {
+  if (input.value.length >=2 && input.value.length <= 500) {
+    input.className = 'form-control is-valid';
+    return true
+  }else{
+    input.className = 'form-control is-invalid';
+    return false
+  }
+}
+
+function validarCategoria(input) {
+  let patron = /^[a-zA-Z\s]{2,25}$/ ;
+
+  if (patron.test(input.value)) {
+    input.className = 'form-control is-valid';
+    return true
+  }else{
+    input.className = 'form-control is-invalid';
+    return false
+  }
+}
+
+function validarDuracion(input) {
+  let patron = /^[A-Za-z0-9\s]+$/;
+
+  if ((patron.test(input.value)) && input.value.length >=1 && input.value.length <= 5) {
+    input.className = 'form-control is-valid';
+    return true
+  }else{
+    input.className = 'form-control is-invalid';
+    return false
+  }
+}
+
+function validarClasificacion(input) {
+  let patron = /^[a-z0-9-]+$/
+  if (patron.test(input.values) && input.value.length >=1 && input.value.length <= 5) {
+    input.className = 'form-control is-valid';
+    return true
+  }else{
+    input.className = 'form-control is-invalid';
+    return false
+  }
+}
+
+function validarPortada(input) {
+  let patron = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
+  if (patron.test(input.value)) {
+    input.className = "form-control is-valid";
+    return true
+  } else {
+    input.className = "form-control is-invalid";
+    return false
+  }
+}
+
+function validarDireccion(input) {
+  let patron = /^[a-zA-Z\s]{2,25}$/ ;
+
+  if (patron.test(input.value)) {
+    input.className = 'form-control is-valid';
+    return true
+  }else{
+    input.className = 'form-control is-invalid';
+    return false
+  }
+}
+
+function validarActores(input) {
+  let patron = /^[a-zA-Z,\s]{2,25}$/ ;
+
+  if (patron.test(input.value)) {
+    input.className = 'form-control is-valid';
+    return true
+  }else{
+    input.className = 'form-control is-invalid';
+    return false
+  }
+}
+
+function validarAno(input) {
+  let patron = /^(19[8-9][0-9]|20[0-2][0-2])$/ ;
+
+  if (patron.test(input.value)) {
+    input.className = 'form-control is-valid';
+    return true
+  }else{
+    input.className = 'form-control is-invalid';
+    return false
+  }
 }

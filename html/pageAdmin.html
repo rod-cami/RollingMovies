@@ -12,54 +12,72 @@
 </head>
 <body>
   <main>
-    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal">Agregar</button>
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#modalAgregarPelicula">Agregar</button>
+    <div class="modal fade" id="modalAgregarPelicula" tabindex="-1" aria-labelledby="modalAgregarPeliculaLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+            <h1 class="modal-title fs-5" id="modalAgregarPeliculaLabel">Modal title</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
-            <form class="form-floating">
+            <form class="form-floating" id="formularioPost">
               <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="inputPostNombre">
+                <input type="text" class="form-control" id="inputPostNombre" required>
                 <label for="floatingInput">Nombre</label>
+                <div class="valid-feedback"> Nombre correcto! Sigue así </div>
+                <div class="invalid-feedback"> Por favor ingrese un nombre correcto. </div>
               </div>
               <div class="form-floating">
-                <input type="text" class="form-control" id="inputPostDescripcion">
+                <input type="text" class="form-control" id="inputPostDescripcion" required>
                 <label for="floatingPassword">Descripcion</label>
+                <div class="valid-feedback"> Nombre correcto! Sigue así </div>
+                <div class="invalid-feedback"> Por favor ingrese un nombre correcto. </div>
               </div>
               <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="inputPostAno">
+                <input type="text" class="form-control" id="inputPostAno" required>
                 <label for="floatingInput">Año de Estreno</label>
+                <div class="valid-feedback"> Nombre correcto! Sigue así </div>
+                <div class="invalid-feedback"> Por favor ingrese un nombre correcto. </div>
               </div>
               <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="inputPostCategoria">
+                <input type="text" class="form-control" id="inputPostCategoria" required>
                 <label for="floatingInput">Categoria</label>
+                <div class="valid-feedback"> Nombre correcto! Sigue así </div>
+                <div class="invalid-feedback"> Por favor ingrese un nombre correcto. </div>
               </div>
               <div class="form-floating">
-                <input type="text" class="form-control" id="inputPostDuracion">
+                <input type="text" class="form-control" id="inputPostDuracion" required>
                 <label for="floatingPassword">Duración</label>
+                <div class="valid-feedback"> Nombre correcto! Sigue así </div>
+                <div class="invalid-feedback"> Por favor ingrese un nombre correcto. </div>
               </div>
               <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="inputPostPortada">
+                <input type="text" class="form-control" id="inputPostPortada" required>
                 <label for="floatingInput">Imagen de Portada</label>
+                <div class="valid-feedback"> Nombre correcto! Sigue así </div>
+                <div class="invalid-feedback"> Por favor ingrese un nombre correcto. </div>
               </div>
               <div class="form-floating">
-                <input type="text" class="form-control" id="inputPostDireccion">
+                <input type="text" class="form-control" id="inputPostDireccion" required>
                 <label for="floatingPassword">Direccion</label>
+                <div class="valid-feedback"> Nombre correcto! Sigue así </div>
+                <div class="invalid-feedback"> Por favor ingrese un nombre correcto. </div>
               </div>
               <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="inputPostActores">
+                <input type="text" class="form-control" id="inputPostActores" required>
                 <label for="floatingInput">Actores</label>
+                <div class="valid-feedback"> Nombre correcto! Sigue así </div>
+                <div class="invalid-feedback"> Por favor ingrese un nombre correcto. </div>
               </div>
               <div class="form-floating">
-                <input type="text" class="form-control" id="inputPostClasificacion">
+                <input type="text" class="form-control" id="inputPostClasificacion" required>
                 <label for="floatingPassword">Clasificacion</label>
+                <div class="valid-feedback"> Nombre correcto! Sigue así </div>
+                <div class="invalid-feedback"> Por favor ingrese un nombre correcto. </div>
               </div>
               <div class="col-auto">
-                <button type="button" class="btn btn-primary mb-3" onclick="crearPelicula()">Enviar</button>
+                <button type="submit" class="btn btn-primary mb-3" id="botonPostEnviar">Enviar</button>
               </div>
             </form> 
           </div>
@@ -86,21 +104,16 @@
       </tbody>
     </table>
 
-    <div class="modal fade" id="myModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="modalModificarPelicula" tabindex="-1" aria-labelledby="modalModificarPeliculaLabel" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="modal-header">
-            <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+            <h1 class="modal-title fs-5" id="modalModificarPeliculaLabel">Modal title</h1>
             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
           </div>
           <div class="modal-body">
             <form class="form-floating" id="formModificarPelicula">
-              
             </form>
-          </div>
-          <div class="modal-footer">
-            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-            <button type="button" class="btn btn-primary">Save changes</button>
           </div>
         </div>
       </div>
