@@ -1,4 +1,4 @@
-import {validarActores, validarAno, validarCategoria, validarClasificacion, validarDescripcion, validarDireccion, validarDuracion, validarNombre, validarPortada} from "./helpersAdmin.js";
+
 
 let nombre = document.getElementById("inputPostNombre");
 let descripcion = document.getElementById("inputPostDescripcion");
@@ -20,7 +20,7 @@ direccion.addEventListener('blur', ()=>{validarDireccion(direccion)});
 actores.addEventListener('blur', ()=>{validarActores(actores)});
 ano.addEventListener('blur', ()=>{validarAno(ano)});
 clasificacion.addEventListener('blur', ()=>{validarClasificacion(clasificacion)});
-// formulario.addEventListener('submit', crearPelicula);
+formulario.addEventListener('submit', crearPelicula);
 
 const obtenerUnaPelicula = async (id) =>{
   const resultado = await fetch(`http://localhost:3000/peliculas/${id}`);
@@ -215,3 +215,105 @@ const seleccionarFavorito = async (id) =>{
 }
 
 crearTablaPeliculas();
+
+function validarNombre(input) {
+  if (input.value.length >=2 && input.value.length <= 100) {
+    input.className = 'form-control is-valid';
+    return true
+  }else{
+    input.className = 'form-control is-invalid';
+    return false
+  }
+}
+
+function validarDescripcion(input) {
+  if (input.value.length >=2 && input.value.length <= 500) {
+    input.className = 'form-control is-valid';
+    return true
+  }else{
+    input.className = 'form-control is-invalid';
+    return false
+  }
+}
+
+function validarCategoria(input) {
+  let patron = /^[a-zA-Z\s]{2,25}$/ ;
+
+  if (patron.test(input.value)) {
+    input.className = 'form-control is-valid';
+    return true
+  }else{
+    input.className = 'form-control is-invalid';
+    return false
+  }
+}
+
+function validarDuracion(input) {
+  let patron = /^[A-Za-z0-9\s]+$/;
+
+  if ((patron.test(input.value)) && input.value.length >=1 && input.value.length <= 5) {
+    input.className = 'form-control is-valid';
+    return true
+  }else{
+    input.className = 'form-control is-invalid';
+    return false
+  }
+}
+
+function validarClasificacion(input) {
+  let patron = /^[a-z0-9-]+$/
+  if (patron.test(input.values) && input.value.length >=1 && input.value.length <= 5) {
+    input.className = 'form-control is-valid';
+    return true
+  }else{
+    input.className = 'form-control is-invalid';
+    return false
+  }
+}
+
+function validarPortada(input) {
+  let patron = /(ftp|http|https):\/\/(\w+:{0,1}\w*@)?(\S+)(:[0-9]+)?(\/|\/([\w#!:.?+=&%@!\-\/]))?/;
+  if (patron.test(input.value)) {
+    input.className = "form-control is-valid";
+    return true
+  } else {
+    input.className = "form-control is-invalid";
+    return false
+  }
+}
+
+function validarDireccion(input) {
+  let patron = /^[a-zA-Z\s]{2,25}$/ ;
+
+  if (patron.test(input.value)) {
+    input.className = 'form-control is-valid';
+    return true
+  }else{
+    input.className = 'form-control is-invalid';
+    return false
+  }
+}
+
+function validarActores(input) {
+  let patron = /^[a-zA-Z,\s]{2,25}$/ ;
+
+  if (patron.test(input.value)) {
+    input.className = 'form-control is-valid';
+    return true
+  }else{
+    input.className = 'form-control is-invalid';
+    return false
+  }
+}
+
+function validarAno(input) {
+  let patron = /^(19[8-9][0-9]|20[0-2][0-2])$/ ;
+
+  if (patron.test(input.value)) {
+    input.className = 'form-control is-valid';
+    return true
+  }else{
+    input.className = 'form-control is-invalid';
+    return false
+  }
+}
