@@ -1,5 +1,3 @@
-
-
 let nombre = document.getElementById("inputPostNombre");
 let descripcion = document.getElementById("inputPostDescripcion");
 let categoria = document.getElementById("inputPostCategoria");
