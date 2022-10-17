@@ -86,21 +86,21 @@ const crearTablaPeliculas = async () =>{
   let cuerpo = peliculas.map(pelicula =>(
     `
     <tr>
-      <th scope="row">${pelicula.id}</th>
-      <td>${pelicula.nombre}</td>
-      <td>${pelicula.categoria}</td>
-      <td>${pelicula.descripcion}</td>
-      <td name="estado${pelicula.estado}" class="align-middle"></td>
-      <td>
-      <button type="button" class="btn btn-danger m-1" onclick="eliminarPelicula(${pelicula.id})"><i class="bi bi-trash"></i></button>
-      <button type="button" class="btn btn-info m-1" onclick="modificarPelicula(${pelicula.id})" data-bs-toggle="modal" data-bs-target="#modalModificarPelicula"><i class="bi bi-pencil text-white"></i></button>
-      <button type="button" class="btn btn-warning m-1" onclick="seleccionarFavorito(${pelicula.id})" name="iconFavorito${pelicula.favorito}"><i class="bi bi-star text-white"></i></button>
+      <th scope="row" class="align-middle m-0 p-0">${pelicula.id}</th>
+      <td class="align-middle m-0 p-0">${pelicula.nombre}</td>
+      <td class="align-middle m-0 p-0">${pelicula.categoria}</td>
+      <td class="align-middle m-0 p-0">${pelicula.descripcion}</td>
+      <td name="estado${pelicula.estado}" class="align-middle  m-0 p-0"></td>
+      <td class="align-middle">
+      <button type="button" class="btn btn-outline-danger m-1" onclick="eliminarPelicula(${pelicula.id})"><i class="bi bi-trash"></i></button>
+      <button type="button" class="btn btn-outline-primary m-1" onclick="modificarPelicula(${pelicula.id})" data-bs-toggle="modal" data-bs-target="#modalModificarPelicula"><i class="bi bi-pencil"></i></button>
+      <button type="button" class="btn btn-outline-warning m-1" onclick="seleccionarFavorito(${pelicula.id})" name="iconFavorito${pelicula.favorito}"><i class="bi bi-star"></i></button>
       </td>
     </tr>
     `
   ))
   
-  cuerpoTabla.innerHTML = cuerpo;
+  cuerpoTabla.innerHTML = cuerpo.join('');
 
   let arrayTrue = document.querySelectorAll('[name="estadotrue"]')
   arrayTrue.forEach(x => (x.innerHTML = '<div class="d-flex justify-content-center"><i class="bi bi-check-circle text-center"></i></div>'));
@@ -109,7 +109,7 @@ const crearTablaPeliculas = async () =>{
   arrayFalse.forEach(x => (x.innerHTML = '<div class="d-flex justify-content-center"><i class="bi bi-x-circle text-center"></i></div>'));
   
   let arrayIconoTrue = document.querySelectorAll('[name="iconFavoritotrue"]')
-  arrayIconoTrue.forEach(x => (x.innerHTML = '<i class="bi bi-star-fill text-white"></i>'));
+  arrayIconoTrue.forEach(x => (x.innerHTML = '<i class="bi bi-star-fill"></i>'));
   return false;
 }
 
@@ -126,7 +126,6 @@ async function modificarPelicula(id){
   let estadoF = document.getElementById("inputFormEstado");
   let clasificacionF = document.getElementById("inputFormClasificacion");
   let formularioF = document.getElementById('formModificarPelicula');
-  let valorEstado =true;
 
   nombreF.setAttribute('value',pelicula.nombre);
   descripcionF.setAttribute('value',pelicula.descripcion);
@@ -137,14 +136,6 @@ async function modificarPelicula(id){
   direccionF.setAttribute('value',pelicula.direccion);
   actoresF.setAttribute('value',pelicula.actores);
   clasificacionF.setAttribute('value',pelicula.clasificacion);
-
-  // if (pelicula.estado == true) {
-  //   estadoF.setAttribute('selected', 'selected');
-  //   valorEstado = true;
-  // }else
-  // {
-  //   valorEstado = false;
-  // }
 
   validarNombre(nombreF);
   validarDescripcion(descripcionF);
@@ -165,10 +156,9 @@ async function modificarPelicula(id){
   actoresF.addEventListener('blur', ()=>{validarActores(actoresF)});
   anoF.addEventListener('blur', ()=>{validarAno(anoF)});
   clasificacionF.addEventListener('blur', ()=>{validarClasificacion(clasificacionF)});
-
   formularioF.addEventListener("submit", function (e) {
     e.preventDefault();
-    cambiarPelicula(pelicula.id,nombreF.value,descripcionF.value,categoriaF.value,duracionF.value,portadaF.value,direccionF.value,actoresF.value,anoF.value,clasificacionF.value,valorEstado,pelicula.favorito);
+    cambiarPelicula(pelicula.id,nombreF.value,descripcionF.value,categoriaF.value,duracionF.value,portadaF.value,direccionF.value,actoresF.value,anoF.value,clasificacionF.value,estadoF.value,pelicula.favorito);
   });
   
   return false;
@@ -176,6 +166,13 @@ async function modificarPelicula(id){
 
 
 async function cambiarPelicula(id,nombre, descripcion,categoria,duracion,portada,direccion,actores,ano,clasificacion,estado,favorito){
+  if (estado == 1) {
+    console.log('entro true')
+    estado = true;
+  } else {
+    console.log('entro false')
+    estado = false;
+  }
 
   await fetch(`http://localhost:3000/peliculas/${id}`, {
     method: 'PUT',
