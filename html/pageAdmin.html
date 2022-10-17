@@ -75,6 +75,13 @@
                 <div class="valid-feedback"> Nombre correcto! Sigue así </div>
                 <div class="invalid-feedback"> Por favor ingrese un nombre correcto. </div>
               </div>
+              <div class="form-floating">
+                <select class="form-select" id="inputPostEstado" aria-label="Estado de publicacion">
+                  <option value="1" selected>Publicado</option>
+                  <option value="2">No Publicado</option>
+                </select>
+                <label for="inputPostEstado">Selecciona estado de publicacion</label>
+              </div>
               <div class="col-auto">
                 <button type="submit" class="btn btn-primary mb-3" id="botonPostEnviar">Enviar</button>
               </div>
@@ -112,6 +119,70 @@
           </div>
           <div class="modal-body">
             <form class="form-floating" id="formModificarPelicula">
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="inputFormNombre" required>
+                <label for="floatingInput">Nombre</label>
+                <div class="valid-feedback"> Nombre correcto! Sigue así </div>
+                <div class="invalid-feedback"> Por favor ingrese un nombre correcto. </div>
+              </div>
+              <div class="form-floating">
+                <input type="text" class="form-control" id="inputFormDescripcion" required>
+                <label for="floatingPassword">Descripcion</label>
+                <div class="valid-feedback"> Nombre correcto! Sigue así </div>
+                <div class="invalid-feedback"> Por favor ingrese un nombre correcto. </div>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="inputFormAno" required>
+                <label for="floatingInput">Año de Estreno</label>
+                <div class="valid-feedback"> Nombre correcto! Sigue así </div>
+                <div class="invalid-feedback"> Por favor ingrese un nombre correcto. </div>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="inputFormCategoria" required>
+                <label for="floatingInput">Categoria</label>
+                <div class="valid-feedback"> Nombre correcto! Sigue así </div>
+                <div class="invalid-feedback"> Por favor ingrese un nombre correcto. </div>
+              </div>
+              <div class="form-floating">
+                <input type="text" class="form-control" id="inputFormDuracion" required>
+                <label for="floatingPassword">Duración</label>
+                <div class="valid-feedback"> Nombre correcto! Sigue así </div>
+                <div class="invalid-feedback"> Por favor ingrese un nombre correcto. </div>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="inputFormPortada" required>
+                <label for="floatingInput">Imagen de Portada</label>
+                <div class="valid-feedback"> Nombre correcto! Sigue así </div>
+                <div class="invalid-feedback"> Por favor ingrese un nombre correcto. </div>
+              </div>
+              <div class="form-floating">
+                <input type="text" class="form-control" id="inputFormDireccion" required>
+                <label for="floatingPassword">Direccion</label>
+                <div class="valid-feedback"> Nombre correcto! Sigue así </div>
+                <div class="invalid-feedback"> Por favor ingrese un nombre correcto. </div>
+              </div>
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="inputFormActores" required>
+                <label for="floatingInput">Actores</label>
+                <div class="valid-feedback"> Nombre correcto! Sigue así </div>
+                <div class="invalid-feedback"> Por favor ingrese un nombre correcto. </div>
+              </div>
+              <div class="form-floating">
+                <select class="form-select" id="inputFormEstado" aria-label="Estado de publicacion">
+                  <option value="1">Publicado</option>
+                  <option value="2">No Publicado</option>
+                </select>
+                <label for="inputPostEstado">Selecciona estado de publicacion</label>
+              </div>
+              <div class="form-floating">
+                <input type="text" class="form-control" id="inputFormClasificacion" required>
+                <label for="floatingPassword">Clasificacion</label>
+                <div class="valid-feedback"> Nombre correcto! Sigue así </div>
+                <div class="invalid-feedback"> Por favor ingrese un nombre correcto. </div>
+              </div>
+              <div class="col-auto">
+                <button type="submit" class="btn btn-primary mb-3" id="botonFormModificar">Modificar</button>
+              </div>
             </form>
           </div>
         </div>

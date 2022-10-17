@@ -7,6 +7,7 @@ let direccion = document.getElementById("inputPostDireccion");
 let actores = document.getElementById("inputPostActores");
 let ano = document.getElementById("inputPostAno");
 let clasificacion = document.getElementById("inputPostClasificacion");
+let estado = document.getElementById("inputPostEstado");
 let formulario = document.getElementById("formularioPost");
 
 nombre.addEventListener('blur', ()=>{validarNombre(nombre)});
@@ -19,6 +20,8 @@ actores.addEventListener('blur', ()=>{validarActores(actores)});
 ano.addEventListener('blur', ()=>{validarAno(ano)});
 clasificacion.addEventListener('blur', ()=>{validarClasificacion(clasificacion)});
 formulario.addEventListener('submit', crearPelicula);
+
+
 
 const obtenerUnaPelicula = async (id) =>{
   const resultado = await fetch(`http://localhost:3000/peliculas/${id}`);
@@ -57,14 +60,18 @@ const agregarPelicula = async (nombre, descripcion,categoria,duracion,portada,di
 }
 
 async function crearPelicula(e){
-
   e.preventDefault();
-
-  let estado = true;
+  let estadoP;
   let favorito = false;
 
+  if (estado.value == 'Publicado') {
+    estadoP = true;
+  } else {
+    estadoP = false;
+  }
+
   if (validarNombre(nombre) && validarActores(actores) && validarAno(ano) && validarCategoria(categoria) && validarClasificacion(clasificacion) && validarDescripcion(descripcion) && validarDireccion(direccion) && validarDuracion(duracion) && validarPortada(portada)) {
-    await agregarPelicula(nombre.value,descripcion.value,categoria.value,duracion.value,portada.value,direccion.value,actores.value,ano.value,clasificacion.value,estado,favorito);
+    await agregarPelicula(nombre.value,descripcion.value,categoria.value,duracion.value,portada.value,direccion.value,actores.value,ano.value,clasificacion.value,estadoP,favorito);
   } else {
     console.log('salio mal algo')
   }
@@ -83,101 +90,92 @@ const crearTablaPeliculas = async () =>{
       <td>${pelicula.nombre}</td>
       <td>${pelicula.categoria}</td>
       <td>${pelicula.descripcion}</td>
-      <td>${pelicula.estado}</td>
+      <td name="estado${pelicula.estado}" class="align-middle"></td>
       <td>
       <button type="button" class="btn btn-danger m-1" onclick="eliminarPelicula(${pelicula.id})"><i class="bi bi-trash"></i></button>
       <button type="button" class="btn btn-info m-1" onclick="modificarPelicula(${pelicula.id})" data-bs-toggle="modal" data-bs-target="#modalModificarPelicula"><i class="bi bi-pencil text-white"></i></button>
-      <button type="button" class="btn btn-warning m-1" onclick="seleccionarFavorito(${pelicula.id})"><i class="bi bi-star text-white"></i></button>
+      <button type="button" class="btn btn-warning m-1" onclick="seleccionarFavorito(${pelicula.id})" name="iconFavorito${pelicula.favorito}"><i class="bi bi-star text-white"></i></button>
       </td>
     </tr>
     `
   ))
   
-  console.log('hola2');
   cuerpoTabla.innerHTML = cuerpo;
+
+  let arrayTrue = document.querySelectorAll('[name="estadotrue"]')
+  arrayTrue.forEach(x => (x.innerHTML = '<div class="d-flex justify-content-center"><i class="bi bi-check-circle text-center"></i></div>'));
+  
+  let arrayFalse = document.querySelectorAll('[name="estadofalse"]')
+  arrayFalse.forEach(x => (x.innerHTML = '<div class="d-flex justify-content-center"><i class="bi bi-x-circle text-center"></i></div>'));
+  
+  let arrayIconoTrue = document.querySelectorAll('[name="iconFavoritotrue"]')
+  arrayIconoTrue.forEach(x => (x.innerHTML = '<i class="bi bi-star-fill text-white"></i>'));
+  return false;
 }
 
 async function modificarPelicula(id){
-  
-  console.log('hola3');
   let pelicula = await obtenerUnaPelicula(id);
-  const formModificar = document.getElementById('formModificarPelicula')
+  let nombreF = document.getElementById("inputFormNombre");
+  let descripcionF = document.getElementById("inputFormDescripcion");
+  let anoF = document.getElementById("inputFormAno");
+  let categoriaF = document.getElementById("inputFormCategoria");
+  let duracionF = document.getElementById("inputFormDuracion");
+  let portadaF = document.getElementById("inputFormPortada");
+  let direccionF = document.getElementById("inputFormDireccion");
+  let actoresF = document.getElementById("inputFormActores");
+  let estadoF = document.getElementById("inputFormEstado");
+  let clasificacionF = document.getElementById("inputFormClasificacion");
+  let formularioF = document.getElementById('formModificarPelicula');
+  let valorEstado =true;
 
-  const form = (
-    `
-    <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="inputFormNombre" value="${pelicula.nombre}">
-        <label for="floatingInput">Nombre</label>
-      </div>
-      <div class="form-floating">
-        <input type="text" class="form-control" id="inputFormDescripcion" value="${pelicula.descripcion}">
-        <label for="floatingPassword">Descripcion</label>
-      </div>
-      <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="inputFormAno" value="${pelicula.ano}">
-        <label for="floatingInput">Año de Estreno</label>
-      </div>
-      <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="inputFormCategoria" value="${pelicula.categoria}">
-        <label for="floatingInput">Categoria</label>
-      </div>
-      <div class="form-floating">
-        <input type="text" class="form-control" id="inputFormDuracion" value="${pelicula.duracion}">
-        <label for="floatingPassword">Duración</label>
-      </div>
-      <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="inputFormPortada" value="${pelicula.portada}">
-        <label for="floatingInput">Imagen de Portada</label>
-      </div>
-      <div class="form-floating">
-        <input type="text" class="form-control" id="inputFormDireccion" value="${pelicula.direccion}">
-        <label for="floatingPassword">Direccion</label>
-      </div>
-      <div class="form-floating mb-3">
-        <input type="text" class="form-control" id="inputFormActores" value="${pelicula.actores}">
-        <label for="floatingInput">Actores</label>
-      </div>
-      <div class="form-floating">
-        <input type="text" class="form-control" id="inputFormClasificacion" value="${pelicula.clasificacion}">
-        <label for="floatingPassword">Clasificacion</label>
-      </div>
-      <div class="form-floating">
-        <input type="text" class="form-control" id="inputFormClasificacion" value="${pelicula.estado}">
-        <label for="floatingPassword">Estado</label>
-      </div>
-      <div class="col-auto">
-        <button type="button" class="btn btn-primary mb-3" onclick="cambiarPelicula(${pelicula.id})">Modificar</button>
-      </div>
-    `
-  )
+  nombreF.setAttribute('value',pelicula.nombre);
+  descripcionF.setAttribute('value',pelicula.descripcion);
+  anoF.setAttribute('value',pelicula.ano);
+  categoriaF.setAttribute('value',pelicula.categoria);
+  duracionF.setAttribute('value',pelicula.duracion);
+  portadaF.setAttribute('value',pelicula.portada);
+  direccionF.setAttribute('value',pelicula.direccion);
+  actoresF.setAttribute('value',pelicula.actores);
+  clasificacionF.setAttribute('value',pelicula.clasificacion);
+
+  // if (pelicula.estado == true) {
+  //   estadoF.setAttribute('selected', 'selected');
+  //   valorEstado = true;
+  // }else
+  // {
+  //   valorEstado = false;
+  // }
+
+  validarNombre(nombreF);
+  validarDescripcion(descripcionF);
+  validarAno(anoF);
+  validarCategoria(categoriaF);
+  validarDuracion(duracionF);
+  validarPortada(portadaF);
+  validarDireccion(direccionF);
+  validarActores(actoresF);
+  validarClasificacion(clasificacionF);
   
-  formModificar.innerHTML = form;
+  nombreF.addEventListener('blur', ()=>{validarNombre(nombreF)});
+  descripcionF.addEventListener('blur', ()=>{validarDescripcion(descripcionF)});
+  categoriaF.addEventListener('blur', ()=>{validarCategoria(categoriaF)});
+  duracionF.addEventListener('blur', ()=>{validarDuracion(duracionF)});
+  portadaF.addEventListener('blur', ()=>{validarPortada(portadaF)});
+  direccionF.addEventListener('blur', ()=>{validarDireccion(direccionF)});
+  actoresF.addEventListener('blur', ()=>{validarActores(actoresF)});
+  anoF.addEventListener('blur', ()=>{validarAno(anoF)});
+  clasificacionF.addEventListener('blur', ()=>{validarClasificacion(clasificacionF)});
+
+  formularioF.addEventListener("submit", function (e) {
+    e.preventDefault();
+    cambiarPelicula(pelicula.id,nombreF.value,descripcionF.value,categoriaF.value,duracionF.value,portadaF.value,direccionF.value,actoresF.value,anoF.value,clasificacionF.value,valorEstado,pelicula.favorito);
+  });
+  
+  return false;
 }
 
-const borrarPelicula = async (id) =>{
 
-  await fetch(`http://localhost:3000/peliculas/${id}`,{
-    method: 'DELETE'
-  })
-}
-
-const eliminarPelicula = async (id) => {
-  await borrarPelicula(id);
-  crearTablaPeliculas();
-}
-
-const cambiarPelicula = async (id) => {
-  let nombre = document.getElementById("inputFormNombre").value;
-  let descripcion = document.getElementById("inputFormDescripcion").value;
-  let categoria = document.getElementById("inputFormCategoria").value;
-  let duracion = document.getElementById("inputFormDuracion").value;
-  let portada = document.getElementById("inputFormPortada").value;
-  let direccion = document.getElementById("inputFormDireccion").value;
-  let actores = document.getElementById("inputFormActores").value;
-  let ano = document.getElementById("inputFormAno").value;
-  let clasificacion = document.getElementById("inputFormClasificacion").value;
-  let estado = true;
-  let favorito = false;
+async function cambiarPelicula(id,nombre, descripcion,categoria,duracion,portada,direccion,actores,ano,clasificacion,estado,favorito){
 
   await fetch(`http://localhost:3000/peliculas/${id}`, {
     method: 'PUT',
@@ -200,16 +198,43 @@ const cambiarPelicula = async (id) => {
   })
 }
 
-const seleccionarFavorito = async (id) =>{
-  await fetch(`http://localhost:3000/peliculas/${id}`, {
-    method: 'PATCH',
-    body: JSON.stringify({
-      favorito: true
-    }),
-    headers: {
-      'Content-type': 'application/json; charset=UTF-8',
-    },
+const borrarPelicula = async (id) =>{
+
+  await fetch(`http://localhost:3000/peliculas/${id}`,{
+    method: 'DELETE'
   })
+}
+
+const eliminarPelicula = async (id) => {
+  await borrarPelicula(id);
+  crearTablaPeliculas();
+}
+
+const seleccionarFavorito = async (id) =>{
+  let pelicula = await obtenerUnaPelicula(id);
+
+  if (pelicula.favorito === false) {
+    await fetch(`http://localhost:3000/peliculas/${id}`, {
+      method: 'PATCH',
+      body: JSON.stringify({
+        favorito: true
+      }),
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+    })
+  }else{
+    await fetch(`http://localhost:3000/peliculas/${id}`, {
+      method: 'PATCH',
+      body: JSON.stringify({
+        favorito: false
+      }),
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+    })
+  }
+  return false;
 }
 
 crearTablaPeliculas();
@@ -249,7 +274,7 @@ function validarCategoria(input) {
 function validarDuracion(input) {
   let patron = /^[A-Za-z0-9\s]+$/;
 
-  if ((patron.test(input.value)) && input.value.length >=1 && input.value.length <= 5) {
+  if ((patron.test(input.value)) && input.value.length >=2 && input.value.length <= 7) {
     input.className = 'form-control is-valid';
     return true
   }else{
@@ -293,7 +318,7 @@ function validarDireccion(input) {
 }
 
 function validarActores(input) {
-  let patron = /^[a-zA-Z,\s]{2,25}$/ ;
+  let patron = /^[a-zA-Z,-\s]{2,500}$/ ;
 
   if (patron.test(input.value)) {
     input.className = 'form-control is-valid';
@@ -305,7 +330,7 @@ function validarActores(input) {
 }
 
 function validarAno(input) {
-  let patron = /^(19[8-9][0-9]|20[0-2][0-2])$/ ;
+  let patron = /^(189[5-9]|19[8-9][0-9]|20[0-2][0-9])$/ ;
 
   if (patron.test(input.value)) {
     input.className = 'form-control is-valid';
