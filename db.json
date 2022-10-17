@@ -11,7 +11,7 @@
       "ano": "2022",
       "clasificacion": "R",
       "estado": true,
-      "favorito": true,
+      "favorito": false,
       "id": 1
     },
     {
@@ -21,8 +21,8 @@
       "duracion": "2h 6m",
       "portada": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTHrIPUMQFX9GD-MBs8s3lQXXu0B7t-nOW5xNDA5fNLv9o6QpAb",
       "direccion": "David Leitch",
-      "actores": "Brad Pitt,Joey King, Aaron Taylor-Johnson",
-      "ano": 2022,
+      "actores": "Brad Pitt, Joey King, Aaron Taylor-Johnson",
+      "ano": "2022",
       "clasificacion": "R",
       "estado": true,
       "favorito": false,
