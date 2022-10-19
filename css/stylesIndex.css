@@ -1,0 +1,12 @@
+.background{
+  background-color: whitesmoke;
+  color: #2B2D42;
+  width: 90vw;
+  height: 70vh;
+}
+
+.text404{
+  font-size: 40px;
+  text-align: center;
+  padding: 100px;
+}
