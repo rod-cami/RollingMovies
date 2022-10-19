@@ -1,12 +1,32 @@
 .background{
   background-color: whitesmoke;
   color: #2B2D42;
-  width: 90vw;
-  height: 70vh;
+  width: auto;
 }
 
 .text404{
   font-size: 40px;
   text-align: center;
-  padding: 100px;
+  margin-top: 30px;
 }
+
+.img404{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 280px;
+}
+
+@media  (max-width: 480px) and (min-width: 300px){
+  .text404{
+    font-size: 20px;
+    text-align: center;
+  }
+
+  .img404{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 150px;
+  }
+  }
