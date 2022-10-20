@@ -1,0 +1,8 @@
+.bgPagina, .modal-content{
+  background-color: #2B2D42;
+  font-family: 'Open Sans', sans-serif;
+}
+
+.valid-feedback, .invalid-feedback{
+  color: white;
+}
