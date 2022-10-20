@@ -10,6 +10,7 @@ let clasificacion = document.getElementById("inputPostClasificacion");
 let estado = document.getElementById("inputPostEstado");
 let botonCerrarAgregar = document.getElementById("botonCerrarAgregar");
 let botonCerrarModificar = document.getElementById("botonCerrarModificar");
+let botonFormModificar = document.getElementById("botonFormModificar");
 let nombreF = document.getElementById("inputFormNombre");
 let descripcionF = document.getElementById("inputFormDescripcion");
 let anoF = document.getElementById("inputFormAno");
@@ -77,7 +78,7 @@ async function crearPelicula(e){
   let estadoP;
   let favorito = false;
 
-  if (estado.value == 'Publicado') {
+  if (estado.value == 1) {
     estadoP = true;
   } else {
     estadoP = false;
@@ -138,16 +139,16 @@ const crearTablaPeliculas = async () =>{
 }
 
 async function modificarPelicula(id){
-  let pelicula = await obtenerUnaPelicula(id);
-  nombreF.setAttribute('value',pelicula.nombre);
-  descripcionF.setAttribute('value',pelicula.descripcion);
-  anoF.setAttribute('value',pelicula.ano);
-  categoriaF.setAttribute('value',pelicula.categoria);
-  duracionF.setAttribute('value',pelicula.duracion);
-  portadaF.setAttribute('value',pelicula.portada);
-  direccionF.setAttribute('value',pelicula.direccion);
-  actoresF.setAttribute('value',pelicula.actores);
-  clasificacionF.setAttribute('value',pelicula.clasificacion);
+  let peliculaF = await obtenerUnaPelicula(id);
+  nombreF.setAttribute('value',peliculaF.nombre);
+  descripcionF.setAttribute('value',peliculaF.descripcion);
+  anoF.setAttribute('value',peliculaF.ano);
+  categoriaF.setAttribute('value',peliculaF.categoria);
+  duracionF.setAttribute('value',peliculaF.duracion);
+  portadaF.setAttribute('value',peliculaF.portada);
+  direccionF.setAttribute('value',peliculaF.direccion);
+  actoresF.setAttribute('value',peliculaF.actores);
+  clasificacionF.setAttribute('value',peliculaF.clasificacion);
 
   validarNombre(nombreF);
   validarDescripcion(descripcionF);
@@ -169,37 +170,56 @@ async function modificarPelicula(id){
   anoF.addEventListener('blur', ()=>{validarAno(anoF)});
   clasificacionF.addEventListener('blur', ()=>{validarClasificacion(clasificacionF)});
   formularioF.addEventListener("submit", function (e) {
-    e.preventDefault();
-    cambiarPelicula(pelicula.id,nombreF.value,descripcionF.value,categoriaF.value,duracionF.value,portadaF.value,direccionF.value,actoresF.value,anoF.value,clasificacionF.value,estadoF.value,pelicula.favorito);
+    e.preventDefault()
+    cambiarPelicula(peliculaF.id,nombreF,descripcionF,categoriaF,duracionF,portadaF,direccionF,actoresF,anoF,clasificacionF,estadoF.value,peliculaF.favorito);
   });
+  
   return false;
 }
 
-async function cambiarPelicula(id,nombre, descripcion,categoria,duracion,portada,direccion,actores,ano,clasificacion,estado,favorito){
+async function cambiarPelicula(id,nombreF,descripcionF,categoriaF,duracionF,portadaF,direccionF,actoresF,anoF,clasificacionF,estado,favorito){
   if (estado == 1) {
     estado = true;
   } else {
     estado = false;
   }
-  await fetch(`http://localhost:3000/peliculas/${id}`, {
-    method: 'PUT',
-    body: JSON.stringify({
-      nombre: nombre,
-      descripcion: descripcion,
-      categoria: categoria,
-      duracion: duracion,
-      portada: portada,
-      direccion: direccion,
-      actores: actores,
-      ano: ano,
-      clasificacion: clasificacion,
-      estado: estado,
-      favorito: favorito
-    }),
-    headers: {
-      'Content-type': 'application/json; charset=UTF-8',
-    },
-  })
+
+  if (validarNombre(nombreF) && validarActores(actoresF) && validarAno(anoF) && validarCategoria(categoriaF) && validarClasificacion(clasificacionF) && validarDescripcion(descripcionF) && validarDireccion(direccionF) && validarDuracion(duracionF) && validarPortada(portadaF)) {
+    await Swal.fire({
+      title: 'Película modificada con éxito',
+      icon: 'success',
+      confirmButtonColor: '#2B2D42',
+      confirmButtonText: 'Ok'
+    })
+    await fetch(`http://localhost:3000/peliculas/${id}`, {
+      method: 'PUT',
+      body: JSON.stringify({
+        nombre: nombreF.value,
+        descripcion: descripcionF.value,
+        categoria: categoriaF.value,
+        duracion: duracionF.value,
+        portada: portadaF.value,
+        direccion: direccionF.value,
+        actores: actoresF.value,
+        ano: anoF.value,
+        clasificacion: clasificacionF.value,
+        estado: estado,
+        favorito: favorito
+      }),
+      headers: {
+        'Content-type': 'application/json; charset=UTF-8',
+      },
+    })
+  } else {
+    await Swal.fire({
+      title: 'ERROR',
+      text: 'Los campos no son correctos, por favor ingrese los campos correctamente',
+      icon: 'error',
+      confirmButtonColor: '#2B2D42',
+      confirmButtonText: 'Ok'
+    })
+  }
+  
 }
 
 const borrarPelicula = async (id) =>{
@@ -222,16 +242,16 @@ const eliminarPelicula = async (id) => {
   }).then((result) => {
     if (result.isConfirmed) {
       borrar = true;
-      Swal.fire({
-        title: 'Borrada con éxito',
-        text: "La película se borro exitosamente",
-        icon: 'success',
-        confirmButtonColor: '#2B2D42',
-        confirmButtonText: 'Ok'
-      })
     }
   })
   if (borrar) {
+    await Swal.fire({
+      title: 'Borrada con éxito',
+      text: "La película se borro exitosamente",
+      icon: 'success',
+      confirmButtonColor: '#2B2D42',
+      confirmButtonText: 'Ok'
+    })
     await borrarPelicula(id);
     crearTablaPeliculas();
   }
@@ -336,7 +356,7 @@ function validarNombre(input) {
 }
 
 function validarDescripcion(input) {
-  if (input.value.length >=2 && input.value.length <= 500) {
+  if (input.value.length >=2 && input.value.length <= 1000) {
     input.className = 'form-control is-valid';
     return true
   }else{
@@ -346,7 +366,7 @@ function validarDescripcion(input) {
 }
 
 function validarCategoria(input) {
-  let patron = /^[a-zA-Z\u00C0-\u017F\s]+$/;
+  let patron = /^[a-zA-Z\u00C0-\u017F,\s]+$/;
 
   if (patron.test(input.value)) {
     input.className = 'form-control is-valid';
@@ -360,7 +380,7 @@ function validarCategoria(input) {
 function validarDuracion(input) {
   let patron = /^[A-Za-z0-9\s]+$/;
 
-  if ((patron.test(input.value)) && input.value.length >=2 && input.value.length <= 7) {
+  if ((patron.test(input.value)) && input.value.length >=2 && input.value.length <= 11) {
     input.className = 'form-control is-valid';
     return true
   }else{
@@ -370,7 +390,7 @@ function validarDuracion(input) {
 }
 
 function validarClasificacion(input) {
-  let patron = /^[a-z0-9-]+$/
+  let patron = /^[a-z0-9\u00C0-\u017F-]+$/
   if (patron.test(input.values) && input.value.length >=1 && input.value.length <= 5) {
     input.className = 'form-control is-valid';
     return true
@@ -392,7 +412,7 @@ function validarPortada(input) {
 }
 
 function validarDireccion(input) {
-  let patron = /^[a-zA-Z\s]{2,25}$/ ;
+  let patron = /^[a-zA-Z\u00C0-\u017F.\s]{2,25}$/ ;
 
   if (patron.test(input.value)) {
     input.className = 'form-control is-valid';
@@ -404,7 +424,7 @@ function validarDireccion(input) {
 }
 
 function validarActores(input) {
-  let patron = /^[a-zA-Z,-\s]{2,500}$/ ;
+  let patron = /^[a-zA-Z\u00C0-\u017F',-.\s]{2,500}$/ ;
 
   if (patron.test(input.value)) {
     input.className = 'form-control is-valid';
@@ -416,7 +436,7 @@ function validarActores(input) {
 }
 
 function validarAno(input) {
-  let patron = /^(189[5-9]|19[8-9][0-9]|20[0-2][0-9])$/ ;
+  let patron = /^(189[5-9]|19[0-9][0-9]|20[0-2][0-9])$/ ;
 
   if (patron.test(input.value)) {
     input.className = 'form-control is-valid';
