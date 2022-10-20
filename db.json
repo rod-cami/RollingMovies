@@ -10,6 +10,8 @@
       "actores" : "Liam Neeson, Monica Belluci, Taj Atwal",
       "ano" : 2022,
       "clasificacion": "R",
+      "estado": true,
+      "favorito": false,
       "id" : 1
     },
     {
@@ -22,6 +24,8 @@
       "actores" : "Brad Pitt,Joey King, Aaron Taylor-Johnson",
       "ano" : 2022,
       "clasificacion": "R",
+      "estado": true,
+      "favorito": false,
       "id" : 2
     },
     {
@@ -34,6 +38,8 @@
       "actores" : "Tom Cruise, Val Kilmer, Miles Teller",
       "ano" : 2022,
       "clasificacion": "PG-13",
+      "estado": true,
+      "favorito": false,
       "id" : 3
     },
     {
@@ -46,6 +52,8 @@
       "actores" : "Jason Statham, Holt McCallany, Rocci Williams",
       "ano" : 2021,
       "clasificacion": "R",
+      "estado": true,
+      "favorito": false,
       "id" : 4
     },
     {
@@ -58,6 +66,8 @@
       "actores" : "Ryan Gosling, Chris Evans, Ana de Armas",
       "ano" : 2022,
       "clasificacion": "PG-13",
+      "estado": true,
+      "favorito": false,
       "id" : 5
     },
     {
@@ -70,6 +80,8 @@
       "actores" : "Robert Downey Jr, Chris Evans, Chris Hemsworth",
       "ano" : 2019,
       "clasificacion": "PG-13",
+      "estado": true,
+      "favorito": false,
       "id" : 6
     },
     {
@@ -82,6 +94,8 @@
       "actores" : "Chris Hemsworth, Rudhraksh Jaiswal, Randeep Hooda",
       "ano" : 2020,
       "clasificacion": "R",
+      "estado": true,
+      "favorito": false,
       "id" : 7
     },
     {
@@ -94,6 +108,8 @@
       "actores" : "Dwayne Johnson, Gal Gadot, Ryan Reynolds",
       "ano" : 2021,
       "clasificacion": "PG-13",
+      "estado": true,
+      "favorito": false,
       "id" : 8
     },
     {
@@ -106,6 +122,8 @@
       "actores" : "MASUMI, Jonathan Rhys Meyers",
       "ano" : 2021,
       "clasificacion": "R",
+      "estado": true,
+      "favorito": false,
       "id" : 9
     },
     {
@@ -118,6 +136,8 @@
       "actores" : "Alicia Vikander, Dominic West, Walton Goggins",
       "ano" : 2018,
       "clasificacion": "PG-13",
+      "estado": true,
+      "favorito": false,
       "id" : 10
     },
     {
@@ -130,6 +150,8 @@
       "actores" : "Ryan Gosling, Rachel McAdams",
       "ano" : "2004",
       "clasificacion": "PG-13",
+      "estado": true,
+      "favorito": false,
       "id" : 11
     },
     {
@@ -142,6 +164,8 @@
       "actores" : "Anne Hathaway, Jim Sturgess",
       "ano" : "2011",
       "clasificacion": "PG-13",
+      "estado": true,
+      "favorito": false,
       "id" : 12
     },
     {
@@ -154,6 +178,8 @@
       "actores" : "Amanda Seyfried, Channing Tatum",
       "ano" : "2010",
       "clasificacion": "PG-13",
+      "estado": true,
+      "favorito": false,
       "id" : 13
     },
     {
@@ -166,6 +192,8 @@
       "actores" : "Rachel McAdams, Channing Tatum",
       "ano" : "2012",
       "clasificacion": "PG-13",
+      "estado": true,
+      "favorito": false,
       "id" : 14
     },
     {
@@ -178,6 +206,8 @@
       "actores" : "Shailene Woodley, Ansel Elgort",
       "ano" : "2014",
       "clasificacion": "PG-13",
+      "estado": true,
+      "favorito": false,
       "id" : 15
     },
     {
@@ -190,6 +220,8 @@
       "actores" : "Emilia Clarke, Sam Clifin",
       "ano" : "2016",
       "clasificacion": "PG-13",
+      "estado": true,
+      "favorito": false,
       "id" : 16
     },
     {
@@ -202,6 +234,8 @@
       "actores" : "Hilary Swank, Gerard Butler",
       "ano" : "2007",
       "clasificacion": "PG-13",
+      "estado": true,
+      "favorito": false,
       "id" : 17
     },
     {
@@ -214,6 +248,8 @@
       "actores" : "Blake Lively, Michiel Huisman",
       "ano" : "2015",
       "clasificacion": "PG-13",
+      "estado": true,
+      "favorito": false,
       "id" : 18
     },
     {
@@ -226,6 +262,8 @@
       "actores" : "Leonardio DiCaprio, Kate Winslet",
       "ano" : "1997",
       "clasificacion": "PG-13",
+      "estado": true,
+      "favorito": false,
       "id" : 19
     },
     {
@@ -238,6 +276,8 @@
       "actores" : "",
       "ano" : "",
       "clasificacion": "",
+      "estado": true,
+      "favorito": false,
       "id" : 20
     },
     {
@@ -250,6 +290,8 @@
       "actores" : "Ellen Burstyn, Jason Miller, Linda Blair, Max Von Sydow, Lee J. Cobb",
       "ano" : "1973",
       "clasificacion": "R",
+      "estado": true,
+      "favorito": false,
       "id" : 21
     },
     {
@@ -262,6 +304,8 @@
       "actores" : "Laura Linney, Tom Wilkinson, Jennifer Carpenter, Campbell Scott, Colm Feore, Mary Beth Hurt, Henry Czerny",
       "ano" : "2005",
       "clasificacion": "PG-13",
+      "estado": true,
+      "favorito": false,
       "id" : 22
     },
     {
@@ -274,6 +318,8 @@
       "actores" : "Marilyn Burns, Gunnar Hansen, Edwin Neal, Allen Danziger, Paul A. Partain, Jim Siedow, Teri McMinn",
       "ano" : "1974",
       "clasificacion": "R",
+      "estado": true,
+      "favorito": false,
       "id" : 23
     },
     {
@@ -286,6 +332,8 @@
       "actores" : "Patrick Wilson, Vera Farmiga, Ron Livingston, Lili Taylor",
       "ano" : "2013",
       "clasificacion": "R",
+      "estado": true,
+      "favorito": false,
       "id" : 24
     },
     {
@@ -298,6 +346,8 @@
       "actores" : "Jack Nicholson, Shelley Duvall, Danny Lloyd, Scatman Crothers",
       "ano" : "1980",
       "clasificacion": "R",
+      "estado": true,
+      "favorito": false,
       "id" : 25
     },
     {
@@ -310,6 +360,8 @@
       "actores" : "Sosie Bacon, Jessie Usher, Kal Penn, Rob Morgan",
       "ano" : "2022",
       "clasificacion": "R",
+      "estado": true,
+      "favorito": false,
       "id" : 26
     },
     {
@@ -322,6 +374,8 @@
       "actores" : "Ethan Hawke, Juliet Rylance, Fred Thompson",
       "ano" : "2012",
       "clasificacion": "R",
+      "estado": true,
+      "favorito": false,
       "id" : 27
     },
     {
@@ -334,6 +388,8 @@
       "actores" : "Jay Hernández, Derek Richardson, Eythor Gudjonsson, Barbara Nedeljáková",
       "ano" : "2005",
       "clasificacion": "R",
+      "estado": true,
+      "favorito": false,
       "id" : 28
     },
     {
@@ -346,6 +402,8 @@
       "actores" : "Katie Featherston, Micah Sloat",
       "ano" : "2007",
       "clasificacion": "R",
+      "estado": true,
+      "favorito": false,
       "id" : 29
     },
     {
@@ -358,6 +416,8 @@
       "actores" : "Tim Curry, Richard Thomas, John Ritter, Harry Anderson, Annette O'Toole, Dennis Christopher",
       "ano" : "1990",
       "clasificacion": "R",
+      "estado": true,
+      "favorito": false,
       "id" : 30
     },
     {
@@ -370,6 +430,8 @@
       "actores" : "",
       "ano" : "",
       "clasificacion": "",
+      "estado": true,
+      "favorito": false,
       "id" : 31
     },
     {
@@ -382,6 +444,8 @@
       "actores" : "",
       "ano" : "",
       "clasificacion": "",
+      "estado": true,
+      "favorito": false,
       "id" : 32
     },
     {
@@ -394,6 +458,8 @@
       "actores" : "",
       "ano" : "",
       "clasificacion": "",
+      "estado": true,
+      "favorito": false,
       "id" : 33
     },
     {
@@ -406,6 +472,8 @@
       "actores" : "",
       "ano" : "",
       "clasificacion": "",
+      "estado": true,
+      "favorito": false,
       "id" : 34
     },
     {
@@ -418,6 +486,8 @@
       "actores" : "",
       "ano" : "",
       "clasificacion": "",
+      "estado": true,
+      "favorito": false,
       "id" : 35
     },
     {
@@ -430,6 +500,8 @@
       "actores" : "",
       "ano" : "",
       "clasificacion": "",
+      "estado": true,
+      "favorito": false,
       "id" : 36
     },
     {
@@ -442,6 +514,8 @@
       "actores" : "",
       "ano" : "",
       "clasificacion": "",
+      "estado": true,
+      "favorito": false,
       "id" : 37
     },
     {
@@ -454,6 +528,8 @@
       "actores" : "",
       "ano" : "",
       "clasificacion": "",
+      "estado": true,
+      "favorito": false,
       "id" : 38
     },
     {
@@ -466,6 +542,8 @@
       "actores" : "",
       "ano" : "",
       "clasificacion": "",
+      "estado": true,
+      "favorito": false,
       "id" : 39
     },
     {
@@ -478,6 +556,8 @@
       "actores" : "",
       "ano" : "",
       "clasificacion": "",
+      "estado": true,
+      "favorito": false,
       "id" : 40
     },
     {
@@ -490,6 +570,8 @@
       "actores" : "",
       "ano" : "",
       "clasificacion": "",
+      "estado": true,
+      "favorito": false,
       "id" : 41
     },
     {
@@ -502,6 +584,8 @@
       "actores" : "",
       "ano" : "",
       "clasificacion": "",
+      "estado": true,
+      "favorito": false,
       "id" : 42
     },
     {
@@ -514,6 +598,8 @@
       "actores" : "",
       "ano" : "",
       "clasificacion": "",
+      "estado": true,
+      "favorito": false,
       "id" : 43
     },
     {
@@ -526,6 +612,8 @@
       "actores" : "",
       "ano" : "",
       "clasificacion": "",
+      "estado": true,
+      "favorito": false,
       "id" : 44
     },
     {
@@ -538,6 +626,8 @@
       "actores" : "",
       "ano" : "",
       "clasificacion": "",
+      "estado": true,
+      "favorito": false,
       "id" : 45
     },
     {
@@ -550,6 +640,8 @@
       "actores" : "",
       "ano" : "",
       "clasificacion": "",
+      "estado": true,
+      "favorito": false,
       "id" : 46
     },
     {
@@ -562,6 +654,8 @@
       "actores" : "",
       "ano" : "",
       "clasificacion": "",
+      "estado": true,
+      "favorito": false,
       "id" : 47
     },
     {
@@ -574,6 +668,8 @@
       "actores" : "",
       "ano" : "",
       "clasificacion": "",
+      "estado": true,
+      "favorito": false,
       "id" : 48
     },
     {
@@ -586,6 +682,8 @@
       "actores" : "",
       "ano" : "",
       "clasificacion": "",
+      "estado": true,
+      "favorito": false,
       "id" : 49
     },
     {
@@ -598,6 +696,8 @@
       "actores" : "",
       "ano" : "",
       "clasificacion": "",
+      "estado": true,
+      "favorito": false,
       "id" : 50
     }
 
