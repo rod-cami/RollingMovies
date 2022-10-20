@@ -1,7 +1,13 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
 .background{
-  background-color: whitesmoke;
+  background-color: #f4f4f4;
   color: #2B2D42;
   width: auto;
+  height: 95vh;
 }
 
 .text404{
@@ -14,19 +20,43 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 280px;
+  height: 350px;
+  width: 600px;
+  margin-left: 450px;
 }
 
 @media  (max-width: 480px) and (min-width: 300px){
   .text404{
-    font-size: 20px;
+    font-size: 15px;
     text-align: center;
+    margin: 0;
   }
 
   .img404{
+    height: 150px;
+    width: 250px;
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 150px;
+    margin-left: 60px;
+    margin-top: 150px;
   }
   }
+  
+  @media  (max-width: 768px) and (min-width: 481px){
+    .text404{
+      font-size: 30px;
+      text-align: center;
+      margin: 0;
+    }
+  
+    .img404{
+      height: 300px;
+      width: 450px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-left: 150px;
+      margin-top: 270px;
+    }
+    }
