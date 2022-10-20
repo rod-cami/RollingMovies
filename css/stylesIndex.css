@@ -60,3 +60,27 @@
       margin-top: 270px;
     }
     }
+
+    @media  (max-width: 1025px) and (min-width: 769px){
+      .text404{
+        font-size: 30px;
+        text-align: center;
+        margin: 0;
+      }
+    
+      .img404{
+        height: 300px;
+        width: 350px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-left: 360px;
+        margin-top: 80px;
+      }
+      .background{
+        background-color: #f4f4f4;
+        color: #2B2D42;
+        width: auto;
+        height: 90vh;
+      }
+      }
