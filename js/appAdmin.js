@@ -8,6 +8,19 @@ let actores = document.getElementById("inputPostActores");
 let ano = document.getElementById("inputPostAno");
 let clasificacion = document.getElementById("inputPostClasificacion");
 let estado = document.getElementById("inputPostEstado");
+let botonCerrarAgregar = document.getElementById("botonCerrarAgregar");
+let botonCerrarModificar = document.getElementById("botonCerrarModificar");
+let nombreF = document.getElementById("inputFormNombre");
+let descripcionF = document.getElementById("inputFormDescripcion");
+let anoF = document.getElementById("inputFormAno");
+let categoriaF = document.getElementById("inputFormCategoria");
+let duracionF = document.getElementById("inputFormDuracion");
+let portadaF = document.getElementById("inputFormPortada");
+let direccionF = document.getElementById("inputFormDireccion");
+let actoresF = document.getElementById("inputFormActores");
+let estadoF = document.getElementById("inputFormEstado");
+let clasificacionF = document.getElementById("inputFormClasificacion");
+let formularioF = document.getElementById('formModificarPelicula');
 let formulario = document.getElementById("formularioPost");
 
 nombre.addEventListener('blur', ()=>{validarNombre(nombre)});
@@ -19,9 +32,9 @@ direccion.addEventListener('blur', ()=>{validarDireccion(direccion)});
 actores.addEventListener('blur', ()=>{validarActores(actores)});
 ano.addEventListener('blur', ()=>{validarAno(ano)});
 clasificacion.addEventListener('blur', ()=>{validarClasificacion(clasificacion)});
+botonCerrarAgregar.addEventListener('click', ()=>{limpiarformulario(formulario)});
+botonCerrarModificar.addEventListener('click', ()=>{limpiarformulario(formularioF)});
 formulario.addEventListener('submit', crearPelicula);
-
-
 
 const obtenerUnaPelicula = async (id) =>{
   const resultado = await fetch(`http://localhost:3000/peliculas/${id}`);
@@ -56,7 +69,7 @@ const agregarPelicula = async (nombre, descripcion,categoria,duracion,portada,di
     },
   }) 
     .then(response => response.json())
-    .then(json => console.log(json))
+    .then(json => json)
 }
 
 async function crearPelicula(e){
@@ -71,16 +84,27 @@ async function crearPelicula(e){
   }
 
   if (validarNombre(nombre) && validarActores(actores) && validarAno(ano) && validarCategoria(categoria) && validarClasificacion(clasificacion) && validarDescripcion(descripcion) && validarDireccion(direccion) && validarDuracion(duracion) && validarPortada(portada)) {
+    await Swal.fire({
+      title: 'Película agregada con éxito',
+      icon: 'success',
+      confirmButtonColor: '#2B2D42',
+      confirmButtonText: 'Ok'
+    })
     await agregarPelicula(nombre.value,descripcion.value,categoria.value,duracion.value,portada.value,direccion.value,actores.value,ano.value,clasificacion.value,estadoP,favorito);
   } else {
-    console.log('salio mal algo')
+    await Swal.fire({
+      title: 'ERROR',
+      text: 'Los campos no son correctos, por favor ingrese los campos correctamente',
+      icon: 'error',
+      confirmButtonColor: '#2B2D42',
+      confirmButtonText: 'Ok'
+    })
   }
 }
 
 
 const crearTablaPeliculas = async () =>{
   let peliculas = await obtenerPeliculas();
-  console.log('hola');
   const cuerpoTabla = document.getElementById("tablaBodyListarPeliculas");
 
   let cuerpo = peliculas.map(pelicula =>(
@@ -115,18 +139,6 @@ const crearTablaPeliculas = async () =>{
 
 async function modificarPelicula(id){
   let pelicula = await obtenerUnaPelicula(id);
-  let nombreF = document.getElementById("inputFormNombre");
-  let descripcionF = document.getElementById("inputFormDescripcion");
-  let anoF = document.getElementById("inputFormAno");
-  let categoriaF = document.getElementById("inputFormCategoria");
-  let duracionF = document.getElementById("inputFormDuracion");
-  let portadaF = document.getElementById("inputFormPortada");
-  let direccionF = document.getElementById("inputFormDireccion");
-  let actoresF = document.getElementById("inputFormActores");
-  let estadoF = document.getElementById("inputFormEstado");
-  let clasificacionF = document.getElementById("inputFormClasificacion");
-  let formularioF = document.getElementById('formModificarPelicula');
-
   nombreF.setAttribute('value',pelicula.nombre);
   descripcionF.setAttribute('value',pelicula.descripcion);
   anoF.setAttribute('value',pelicula.ano);
@@ -160,20 +172,15 @@ async function modificarPelicula(id){
     e.preventDefault();
     cambiarPelicula(pelicula.id,nombreF.value,descripcionF.value,categoriaF.value,duracionF.value,portadaF.value,direccionF.value,actoresF.value,anoF.value,clasificacionF.value,estadoF.value,pelicula.favorito);
   });
-  
   return false;
 }
 
-
 async function cambiarPelicula(id,nombre, descripcion,categoria,duracion,portada,direccion,actores,ano,clasificacion,estado,favorito){
   if (estado == 1) {
-    console.log('entro true')
     estado = true;
   } else {
-    console.log('entro false')
     estado = false;
   }
-
   await fetch(`http://localhost:3000/peliculas/${id}`, {
     method: 'PUT',
     body: JSON.stringify({
@@ -196,21 +203,83 @@ async function cambiarPelicula(id,nombre, descripcion,categoria,duracion,portada
 }
 
 const borrarPelicula = async (id) =>{
-
   await fetch(`http://localhost:3000/peliculas/${id}`,{
     method: 'DELETE'
   })
 }
 
 const eliminarPelicula = async (id) => {
-  await borrarPelicula(id);
-  crearTablaPeliculas();
+  let borrar = false;
+  await Swal.fire({
+    title: 'Borrar película',
+    text: `¿Está seguro? Recuerde que este proceso es irreversible`,
+    icon: 'warning',
+    showCancelButton: true,
+    confirmButtonColor: '#2B2D42',
+    cancelButtonColor: '#2B2D42',
+    confirmButtonText: 'Borrar',
+    cancelButtonText: 'Cancelar'
+  }).then((result) => {
+    if (result.isConfirmed) {
+      borrar = true;
+      Swal.fire({
+        title: 'Borrada con éxito',
+        text: "La película se borro exitosamente",
+        icon: 'success',
+        confirmButtonColor: '#2B2D42',
+        confirmButtonText: 'Ok'
+      })
+    }
+  })
+  if (borrar) {
+    await borrarPelicula(id);
+    crearTablaPeliculas();
+  }
 }
 
 const seleccionarFavorito = async (id) =>{
   let pelicula = await obtenerUnaPelicula(id);
+  let banFavorito, banDesfavorito;
 
   if (pelicula.favorito === false) {
+    await Swal.fire({
+      title: 'Marcar favorito',
+      text: `¿Está seguro que quiere marcar ${pelicula.nombre} como favorito?`,
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#2B2D42',
+      cancelButtonColor: '#2B2D42',
+      confirmButtonText: 'Marcar',
+      cancelButtonText: 'Cancelar'
+    }).then((resultado) => {
+      if (resultado.isConfirmed) {
+        banFavorito = true;
+      }
+    })
+  }else{
+    await Swal.fire({
+      title: 'Desmarcar favorito',
+      text: `¿Está seguro que quiere desmarcar ${pelicula.nombre} como favorito?`,
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#2B2D42',
+      cancelButtonColor: '#2B2D42',
+      confirmButtonText: 'Desmarcar',
+      cancelButtonText: 'Cancelar'
+    }).then((result) => {
+      if (result.isConfirmed) {
+        banDesfavorito = true;
+      }
+    })
+  }
+  if (banFavorito) {
+    await Swal.fire({
+      title: 'Marcado como Favorito',
+      text: "La película se marcó como favorito",
+      icon: 'success',
+      confirmButtonColor: '#2B2D42',
+      confirmButtonText: 'Ok'
+    })
     await fetch(`http://localhost:3000/peliculas/${id}`, {
       method: 'PATCH',
       body: JSON.stringify({
@@ -220,7 +289,15 @@ const seleccionarFavorito = async (id) =>{
         'Content-type': 'application/json; charset=UTF-8',
       },
     })
-  }else{
+  }
+  if (banDesfavorito) {
+    await Swal.fire({
+      title: 'Desmarcado con éxito',
+      text: "La película se desmarcó exitosamente",
+      icon: 'success',
+      confirmButtonColor: '#2B2D42',
+      confirmButtonText: 'Ok'
+    })
     await fetch(`http://localhost:3000/peliculas/${id}`, {
       method: 'PATCH',
       body: JSON.stringify({
@@ -231,10 +308,22 @@ const seleccionarFavorito = async (id) =>{
       },
     })
   }
-  return false;
 }
 
 crearTablaPeliculas();
+
+function limpiarformulario(idForm) {
+  idForm.reset();
+  nombre.className = 'form-control';
+  descripcion.className = 'form-control';
+  categoria.className = 'form-control';
+  direccion.className = 'form-control';
+  actores.className = 'form-control';
+  ano.className = 'form-control';
+  clasificacion.className = 'form-control';
+  duracion.className = 'form-control';
+  portada.className = 'form-control';
+}
 
 function validarNombre(input) {
   if (input.value.length >=2 && input.value.length <= 100) {
@@ -257,7 +346,7 @@ function validarDescripcion(input) {
 }
 
 function validarCategoria(input) {
-  let patron = /^[a-zA-Z\s]{2,25}$/ ;
+  let patron = /^[a-zA-Z\u00C0-\u017F\s]+$/;
 
   if (patron.test(input.value)) {
     input.className = 'form-control is-valid';
