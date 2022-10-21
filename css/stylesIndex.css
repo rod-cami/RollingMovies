@@ -1,0 +1,48 @@
+*{
+  margin: 0;
+  padding: 0;
+}
+
+.body{
+  background-color: #2B2D42;
+}
+.header{
+  padding: 30px 0;
+}
+
+.contenedor{
+  /* width: 90%;
+  margin: auto; */
+  position: relative;
+  display: inline-block;
+}
+
+.titlePeliPrincipal{
+  position: absolute;
+  top: 65%;
+  left: 5%;
+}
+.txtPeliPrincipal{
+  position: absolute;
+  top: 75%;
+  left: 5%;
+  right: 10%;
+}
+
+.buttonPeliPrincipal{
+  position: absolute;
+  top:88%;
+  left: 5%;
+}
+.peliculaPrincipal{
+  font-size: 16px;
+  min-height: 30em;
+  color: #EDF2F4;
+}
+
+.imgPeliPrincipal{
+  width: 100vw;
+  height: 65vh;
+  }
+
+.imgPeliPrincipal:hover {filter: opacity(.5);}
