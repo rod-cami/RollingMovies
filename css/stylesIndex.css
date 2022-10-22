@@ -43,6 +43,7 @@
 .imgPeliPrincipal{
   width: 100vw;
   height: 65vh;
+  margin-bottom: 5px;
   }
 
 .imgPeliPrincipal:hover {filter: opacity(.5);}
