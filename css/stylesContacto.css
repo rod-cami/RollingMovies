@@ -1,5 +1,14 @@
-.tamaño{
-  height: 100%hw;
-  
+.contactForm{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
 }
 
+.flexible{
+  display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+}
