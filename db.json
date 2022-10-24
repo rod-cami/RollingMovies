@@ -11,7 +11,7 @@
       "ano" : 2022,
       "clasificacion": "R",
       "estado": true,
-      "favorito": false,
+      "favorito": true,
       "id" : 1
     },
     {
