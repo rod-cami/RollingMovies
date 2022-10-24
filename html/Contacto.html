@@ -14,25 +14,25 @@
 
 <body class="contactForm">
   <section>
-    <h1 class="m-5">
+    <h1 class="mb-5 d-flex justify-content-center">
       Contactar con el servicio al cliente
     </h1>
-    <div class="colorLetra d-flex">
-      <form class="col-lg-6 col-md-12">
-        <div class="mb-3 mx-auto ">
+    <div class="colorLetra d-flex ">
+      <form class="justify-content-center col-lg-6 col-md-12 col-sm-12 needs-validation">
+        <div class="mb-4">
           <label for="exampleInputEmail1" class="form-label">Correo Electronico</label>
-          <input type="email" class="form-control " id="exampleInputEmail1" aria-describedby="emailHelp">
+          <input type="email" class="form-control " id="exampleInputEmail1" placeholder="ejemplo@email.com" minlength="2" maxlength="25" required>
         </div>
-        <div class="mb-3">
+        <div class="mb-4">
           <label for="exampleInputPassword1" class="form-label">Motivo</label>
-          <input type="text" class="form-control" id="exampleInputPassword1">
+          <input type="text" class="form-control" minlength="4" maxlength="40" required>
         </div>
-      </form>
-      <form class="col-lg-6 mx-5 col-md-12">
-        <div class="mb-3  mx-auto">
+        <div class="mb-4">
           <label for="exampleInputEmail1" class="form-label">Mensaje</label>
-          <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
-          <button type="submit" class="btn btn-primary mt-3">Enviar <i class="bi bi-telegram"></i></button>
+          <textarea class="form-control" maxlength="100" minlength="10" id="exampleFormControlTextarea1" rows="4" required></textarea>
+        </div>
+        <div>
+          <a href=""><button type="submit" class="btn btn-primary mt-3">Enviar <i class="bi bi-telegram"></i></button></a>
         </div>
       </form>
     </div>
