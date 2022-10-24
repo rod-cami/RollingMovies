@@ -97,7 +97,34 @@ const llenarCategorias = async () =>{
   realizarCarrousel();
 }
 
+const llenarPortada = async () =>{
+  let peliculas = await obtenerPeliculas();
+  let pelicula, portadaPeli;
+  let portadaPeliculaFavorita = document.getElementById("portadaPeliculaFavorita");
+
+  peliculas.map(x => {
+    if (x.favorito === true) {
+      console.log(x);
+      pelicula = x;
+    }
+  })
+
+  portadaPeli = `
+    <img src="${pelicula.portada}" class="position-absolute w-100 imgPortada" alt="">
+    <div class="text-white w-50">
+      <div class="datosPortada">
+        <h5>${pelicula.nombre}</h5>
+        <h6>${pelicula.descripcion}</h6>
+        <button class="btn btn-danger">hola</button>
+      </div>
+    </div>
+  `;
+
+  portadaPeliculaFavorita.innerHTML = portadaPeli;
+}
+
 llenarCategorias();
+llenarPortada();
 
 const realizarCarrousel = () =>{
   new Glider(document.querySelector('.listaPeliculasAccion'),{
