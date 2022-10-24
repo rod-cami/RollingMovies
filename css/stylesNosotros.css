@@ -86,7 +86,9 @@
   transition: margin-top 0.4s;
   letter-spacing: 3px;
   font-size: 15px;
-  color: #2B2D42;
+  font-weight: bold;
+  text-shadow: white 1px 1px;
+  color: black;
 }
 
 @media (min-width: 200px) and (max-width: 768px) {
