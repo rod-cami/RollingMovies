@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="../css/stylesUsers.css" />
+  </head>
+
+  <body class="bgPagina">
+    <main>
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#modalRegistro">
+        Launch demo modal
+      </button>
+
+      <!-- Modal -->
+      <div class="modal fade" id="modalRegistro" tabindex="-1" aria-labelledby="modalRegistroLabel" aria-hidden="true">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5 text-white" id="modalRegistroLabel">
+                Suscribete
+              </h1>
+              <button type="button" class="btn-close btn-close-white" id="botonCerrarRegistro" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="p-5">
+                <form class="row" id="formularioRegistro">
+                  <div class="mb-3 col-12 form-floating">
+                      <input type="text" class="form-control" id="inputRegistroNombre" placeholder="Nombre de Usuario" required>
+                      <label for="inputRegistroNombre">Nombre  de Usuario</label>
+                      <div class="valid-feedback">Nombre correcto!</div>
+                      <div class="invalid-feedback">Por favor ingrese un nombre correcto. </div>
+                  </div>
+                  <div class="form-floating mb-3 col-12">
+                      <input type="text" class="form-control" id="inputRegistroUsuario" placeholder="Usuario" required>
+                      <label for="inputRegistroUsuario">Usuario</label>
+                      <div class="valid-feedback">Descripcion correcta!</div>
+                      <div class="invalid-feedback">Por favor ingrese una descripcion correcta.</div>
+                  </div>
+                  <div class="form-floating mb-3 col-12">
+                      <input type="password" class="form-control" id="inputRegistroContrasena" placeholder="Contraseña" required>
+                      <label for="inputRegistroContrasena">Contraseña</label>
+                      <div class="valid-feedback">Conrtaseña correcta!</div>
+                      <div class="invalid-feedback">Por favor ingrese un contraseña correcta</div>
+                  </div>
+                  <div class="form-floating mb-3 col-12">
+                      <input type="password" class="form-control" id="inputRegistroContrasenaC" placeholder="Confirmar Contraseña" required>
+                      <label for="inputRegistroContrasenaC">Confirmar Contraseña</label>
+                      <div class="valid-feedback">Contraseña correcte!</div>
+                      <div class="invalid-feedback">Las contraseñas no coinciden</div>
+                  </div>
+                  <div class="col-12 d-flex justify-content-center mt-2">
+                      <div>
+                        <button type="submit" class="btn btn-danger" id="botonRegistroEnviar">Registrar</button>
+                      </div>
+                  </div>
+              </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <script src="../js/appUsers.js"></script>
+  </body>
+</html>

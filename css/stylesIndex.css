@@ -1,0 +1,17 @@
+.card{
+  border: none;
+  border-radius: 0%;
+}
+.btn{
+  border: none;
+}
+
+.imgPortada{
+  height: 70vh;
+  z-index: -100000;
+}
+
+.categoriasPeliculas{
+  margin-top: 400px;
+}
+
