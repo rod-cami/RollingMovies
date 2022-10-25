@@ -23,7 +23,7 @@ const llenarCategorias = async () =>{
 
   peliculas.map(x =>{
     let categoria = x.categoria;
-    if ((categoria.toLowerCase()).includes('accion')) {
+    if ((categoria.toLowerCase()).includes('accion') && x.estado === true) {
       arrayAccion[i] = 
       `
       <div class="card m-2" style="width: 18rem;">
@@ -36,7 +36,7 @@ const llenarCategorias = async () =>{
       i++;
     }
     
-    if ((categoria.toLowerCase()).includes('romance')) {
+    if ((categoria.toLowerCase()).includes('romance') && x.estado === true) {
       arrayRomance[j] = 
       `
       <div class="card m-2" style="width: 18rem;">
@@ -49,7 +49,7 @@ const llenarCategorias = async () =>{
       j++;
     }
     
-    if ((categoria.toLowerCase()).includes('terror')) {
+    if ((categoria.toLowerCase()).includes('terror') && x.estado === true) {
       arrayTerror[q] = 
       `
       <div class="card m-2" style="width: 18rem;">
@@ -62,7 +62,7 @@ const llenarCategorias = async () =>{
       q++;
     }
     
-    if ((categoria.toLowerCase()).includes('fantasia')) {
+    if ((categoria.toLowerCase()).includes('fantasia') && x.estado === true) {
       arrayFantasia[p] = 
       `
       <div class="card m-2" style="width: 18rem;">
@@ -75,7 +75,7 @@ const llenarCategorias = async () =>{
       p++;
     }
     
-    if ((categoria.toLowerCase()).includes('infantil')) {
+    if ((categoria.toLowerCase()).includes('infantil') && x.estado === true) {
       arrayInfantiles[k] = 
       `
       <div class="card m-2" style="width: 18rem;">
