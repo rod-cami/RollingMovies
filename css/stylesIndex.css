@@ -1,0 +1,32 @@
+.card{
+  border: none;
+  border-radius: 0%;
+}
+
+.card:hover{
+  transform: scale(1.1)
+}
+
+/* .card-body{
+
+} */
+
+.btn{
+  border: none;
+}
+
+.imgPortada{
+  height: 70vh;
+  z-index: -100000;
+}
+
+.txtcategoria{
+  color: #EDF2F4;
+}
+.categoriasPeliculas{
+  margin-top: 400px;
+}
+
+.backgroundbody{
+  background-color: #2B2D42;
+ }
