@@ -23,6 +23,9 @@ let estadoF = document.getElementById("inputFormEstado");
 let clasificacionF = document.getElementById("inputFormClasificacion");
 let formularioF = document.getElementById('formModificarPelicula');
 let formulario = document.getElementById("formularioPost");
+let navAdmin = document.getElementById("navAdmin");
+let navUser = document.getElementById("navUser");
+
 nombre.addEventListener('blur', ()=>{validarNombre(nombre)});
 descripcion.addEventListener('blur', ()=>{validarDescripcion(descripcion)});
 categoria.addEventListener('blur', ()=>{validarCategoria(categoria)});
@@ -35,6 +38,21 @@ clasificacion.addEventListener('blur', ()=>{validarClasificacion(clasificacion)}
 botonCerrarAgregar.addEventListener('click', ()=>{limpiarformulario(formulario)});
 botonCerrarModificar.addEventListener('click', ()=>{limpiarformulario(formularioF)});
 formulario.addEventListener('submit', crearPelicula);
+
+
+let tipo = localStorage.getItem('role');
+
+window.addEventListener('load', ()=>{
+  if (tipo == "admin") {
+    navAdmin.className= 'nav-item';
+  }else{
+    navUser.className='nav-item'
+  }
+})
+
+const limpiarLocalStorage = () =>{
+  localStorage.clear();
+}
 
 const obtenerUnaPelicula = async (id) =>{
   const resultado = await fetch(`http://localhost:3000/peliculas/${id}`);
@@ -432,6 +450,6 @@ const isAdmin = () => {
   const role = localStorage.getItem('role')
 
   if (role !== 'admin') {
-    window.location.href = './html/index.html'
+    window.location.href = '../html/index.html'
   }
 }

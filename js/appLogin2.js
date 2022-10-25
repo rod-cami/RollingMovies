@@ -17,7 +17,11 @@ async function inicioSesion(e) {
   }
   if (user.password === passwordLogin) {
     localStorage.setItem('role', user.role)
-    window.location.href = "../html/pageAdmin.html"
+    if (user.role == "admin") {
+      window.location.href = "../html/pageAdmin.html"
+    } else {
+      window.location.href = "../html/index.html"
+    }
   } else {
     alert('Los datos no coinciden')
   }

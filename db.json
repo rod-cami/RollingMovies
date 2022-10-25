@@ -711,17 +711,17 @@
       "id" : 1
     },
     {
-      "email" : "",
-      "username" : "",
-      "password" : "",
-      "role" : "",
+      "email" : "camilarodriguez4646@gmail.com",
+      "username" : "camila",
+      "password" : "Admin1234*",
+      "role" : "admin",
       "id" : 2
     },
     {
-      "email" : "",
-      "username" : "",
-      "password" : "",
-      "role" : "",
+      "email" : "pepito@gmail.com",
+      "username" : "pepito",
+      "password" : "User1234*",
+      "role" : "user",
       "id" : 3
     },
     {

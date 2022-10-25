@@ -1,26 +1,25 @@
 let nombreUs = document.getElementById("inputRegistroNombre");
-let usuario = document.getElementById("inputRegistroUsuario");
+let email = document.getElementById("inputRegistroEmail");
 let contrasena = document.getElementById("inputRegistroContrasena");
 let contrasenaC = document.getElementById("inputRegistroContrasenaC");
 let formularioRegistro = document.getElementById("formularioRegistro");
 let botonCerrarRegistro = document.getElementById("botonCerrarRegistro");
 
 nombreUs.addEventListener('blur', ()=>{validarNombreUs(nombreUs)});
-usuario.addEventListener('blur', ()=>{validarUsuario(usuario)});
+email.addEventListener('blur', ()=>{validarEmail(email)});
 contrasena.addEventListener('blur', ()=>{validarContrasena(contrasena)});
 contrasenaC.addEventListener('blur', ()=>{validarContrasenaC(contrasena,contrasenaC)});
 formularioRegistro.addEventListener('submit', agregarUsuario);
 botonCerrarRegistro.addEventListener('click', ()=>{limpiarformulario(formularioRegistro)});
 
 const anadirUsuario = async () =>{
-  await fetch('http://localhost:3000/usuarios',{
+  await fetch('http://localhost:3000/users',{
     method: 'POST',
     body: JSON.stringify({
-      nombre : nombreUs.value,
-      usuario : usuario.value,
-      contrasena : contrasena.value,
-      tipo : "usuario",
-      estado : true,
+      email : email.value,
+      username : nombreUs.value,
+      password : contrasena.value,
+      role : "usuario"
     }),
     headers:{
       'Content-type': 'application/json; charset=UTF-8'
@@ -30,7 +29,7 @@ const anadirUsuario = async () =>{
 
 async function agregarUsuario(e){
   e.preventDefault();
-  if(validarContrasena(nombreUs), validarUsuario(usuario), validarNombreUs(nombreUs), validarContrasenaC(contrasena,contrasenaC)){
+  if(validarContrasena(nombreUs), validarEmail(email), validarNombreUs(nombreUs), validarContrasenaC(contrasena,contrasenaC)){
     await Swal.fire({
       title: 'Usuario agregado con éxito',
       icon: 'success',
@@ -52,7 +51,7 @@ async function agregarUsuario(e){
 function limpiarformulario(idForm) {
   idForm.reset();
   nombreUs.className = 'form-control';
-  usuario.className = 'form-control';
+  email.className = 'form-control';
   contrasena.className = 'form-control';
   contrasenaC.className = 'form-control';
 }
@@ -67,8 +66,8 @@ function validarNombreUs(input) {
   }
 }
 
-function validarUsuario(input) {
-  let patron = /^([A-Za-z0-9_-]{1,15})$/;
+function validarEmail(input) {
+  let patron = /^(([^<>()\[\]\\.,;:\s@”]+(\.[^<>()\[\]\\.,;:\s@”]+)*)|(“.+”))@((\[[0–9]{1,3}\.[0–9]{1,3}\.[0–9]{1,3}\.[0–9]{1,3}])|(([a-zA-Z\-0–9]+\.)+[a-zA-Z]{2,}))$/;
   if (patron.test(input.value)) {
     input.className = 'form-control is-valid';
     return true
