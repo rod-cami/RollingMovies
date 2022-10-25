@@ -702,45 +702,40 @@
     }
 
   ],
-  "usuarios" : [
+  "users" : [
     {
-      "nombre" : "",
-      "usuario" : "",
-      "contrasena" : "",
-      "tipo" : "",
-      "estado" : "",
+      "email" : "nicolasvalentinv9@gmail.com",
+      "username" : "valentin",
+      "password" : "admin1234",
+      "role" : "admin",
       "id" : 1
     },
     {
-      "nombre" : "",
-      "usuario" : "",
-      "contrasena" : "",
-      "tipo" : "",
-      "estado" : "",
+      "email" : "",
+      "username" : "",
+      "password" : "",
+      "role" : "",
       "id" : 2
     },
     {
-      "nombre" : "",
-      "usuario" : "",
-      "contrasena" : "",
-      "tipo" : "",
-      "estado" : "",
+      "email" : "",
+      "username" : "",
+      "password" : "",
+      "role" : "",
       "id" : 3
     },
     {
-      "nombre" : "",
-      "usuario" : "",
-      "contrasena" : "",
-      "tipo" : "",
-      "estado" : "",
+      "email" : "",
+      "username" : "",
+      "password" : "",
+      "role" : "",
       "id" : 4
     },
     {
-      "nombre" : "",
-      "usuario" : "",
-      "contrasena" : "",
-      "tipo" : "",
-      "estado" : "",
+      "email" : "",
+      "username" : "",
+      "password" : "",
+      "role" : "",
       "id" : 5
     }
   ]

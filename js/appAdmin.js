@@ -427,3 +427,11 @@ function validarAno(input) {
     return false
   }
 }
+
+const isAdmin = () => {
+  const role = localStorage.getItem('role')
+
+  if (role !== 'admin') {
+    window.location.href = './html/index.html'
+  }
+}
