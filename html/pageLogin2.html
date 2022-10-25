@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
+  <link rel="stylesheet" href="../css/stylesLogin.css">
+  <link rel="stylesheet" href="../css/stylesUsers.css">
+  <title>Login</title>
+</head>
+<body>
+  <div class="mx-auto w-50">
+    <div class="bg-login p-5">
+      <form class="row" id="formularioLogin">
+        <div class="form-floating col-12 mb-2">
+          <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
+          <label for="email">Email</label>
+        </div>
+        <div class="form-floating col-12">
+          <input type="password" class="form-control" id="password" placeholder="Password" required>
+          <label for="password">Contraseña</label>  
+        </div>         
+        <div class="mt-2 col-12">
+          <input class="text_recuerdame" type="checkbox">
+          <span class="text_recuerdame text-white">Recuérdame</span>
+        </div>
+        <div class="col-12 d-flex justify-content-center">
+          <div>
+            <button class="btn btn-danger mt-2" type="submit" id="button">Ingresar</button>
+          </div>
+        </div>
+        <div class="mt-1 col-12 row">
+          <a class="password_recovery col-md-6 mt-5 text-white" data-bs-toggle="modal" data-bs-target="#exampleModal">¿Has olvidado la contraseña?</a>
+          <a class="password_recovery col-md-6 mt-5 text-white" data-bs-toggle="modal" data-bs-target="#modalRegistro">¿No tienes una cuenta? Suscribete</a>
+        </div>
+      </form>
+    </div>
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5 text-white" id="exampleModalLabel">Recuperar contraseña</h1>
+          <button type="button" id="botonCerrarRecuperar" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <form class="form-floating" id="formularioRecuperarContrasena">
+            <div class="form-floating col-12 mb-2">
+              <input type="email" class="form-control" id="emailRecuperar" placeholder="name@example.com" required>
+              <label for="emailRecuperar">Email</label>
+              <div class="valid-feedback">Email correcto!</div>
+              <div class="invalid-feedback">El email ingresado es incorrecto o no coincide con algun usuario.</div>
+            </div>
+            <div class="form-floating col-12 mb-2">
+              <input type="password" class="form-control" id="contrasenaRecuperar" placeholder="Contraseña nuevv" required>
+              <label for="contrasenaRecuperar">Contraseña nueva</label>  
+              <div class="valid-feedback">Contraseña correcta!</div>
+              <div class="invalid-feedback">Por favor ingrese una contraseña correcta</div>
+            </div> 
+            <div class="form-floating col-12 mb-2">
+              <input type="password" class="form-control" id="contrasenaCRecuperar"  placeholder="Confimar contraseña" required>
+              <label for="contrasenaCRecuperar">Confimar contraseña</label>  
+              <div class="valid-feedback">Contraseña correcta!</div>
+              <div class="invalid-feedback">Las contraseñas no coinciden</div>
+            </div> 
+            <div>
+              <button class="btn btn-danger mt-2" type="submit" id="botonRecuperar">Guardar contraseña</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal fade" id="modalRegistro" tabindex="-1" aria-labelledby="modalRegistroLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5 text-white" id="modalRegistroLabel">
+            Suscribete
+          </h1>
+          <button type="button" class="btn-close btn-close-white" id="botonCerrarRegistro" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="p-5">
+            <form class="row" id="formularioRegistro">
+              <div class="mb-3 col-12 form-floating">
+                  <input type="text" class="form-control" id="inputRegistroNombre" placeholder="Nombre de Usuario" required>
+                  <label for="inputRegistroNombre">Nombre  de Usuario</label>
+                  <div class="valid-feedback">Nombre correcto!</div>
+                  <div class="invalid-feedback">Por favor ingrese un nombre correcto. </div>
+              </div>
+              <div class="form-floating mb-3 col-12">
+                  <input type="email" class="form-control" id="inputRegistroEmail" placeholder="Email" required>
+                  <label for="inputRegistroEmail">Email</label>
+                  <div class="valid-feedback">Email correcta!</div>
+                  <div class="invalid-feedback">Por favor ingrese un email correcto.</div>
+              </div>
+              <div class="form-floating mb-3 col-12">
+                  <input type="password" class="form-control" id="inputRegistroContrasena" placeholder="Contraseña" required>
+                  <label for="inputRegistroContrasena">Contraseña</label>
+                  <div class="valid-feedback">Conrtaseña correcta!</div>
+                  <div class="invalid-feedback">Por favor ingrese un contraseña correcta</div>
+              </div>
+              <div class="form-floating mb-3 col-12">
+                  <input type="password" class="form-control" id="inputRegistroContrasenaC" placeholder="Confirmar Contraseña" required>
+                  <label for="inputRegistroContrasenaC">Confirmar Contraseña</label>
+                  <div class="valid-feedback">Contraseña correcta!</div>
+                  <div class="invalid-feedback">Las contraseñas no coinciden</div>
+              </div>
+              <div class="col-12 d-flex justify-content-center mt-2">
+                  <div>
+                    <button type="submit" class="btn btn-danger" id="botonRegistroEnviar">Registrar</button>
+                  </div>
+              </div>
+          </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- JavaScript Bundle with Popper -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="../js/appUsers.js"></script>
+  <script src="../js/appLogin2.js"></script>
+</body>
+</html>

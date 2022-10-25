@@ -1,0 +1,67 @@
+@font-face {
+  font-family: CercoDEMO-Medium;
+  src: url(../fuentes/CercoDEMO-Medium.otf);
+}
+
+@font-face {
+  font-family: CercoDEMO-Regular;
+  src: url(../fuentes/CercoDEMO-Regular.otf);
+}
+
+@font-face {
+  font-family: CercoDEMO-Light;
+  src: url(../fuentes/CercoDEMO-Light.otf);
+}
+
+
+body{
+  background-image: url(../img/20.jpg);
+  background-size: 100%;
+}
+
+
+a{
+  font-family: CercoDEMO-Regular;
+}
+
+.bg-login{
+  background-color: #383a57;
+}
+.text_recuerdame{
+  margin-top: 10px;
+  text-align: right;
+  color: rgb(250, 248, 248);
+}
+
+.password_recovery{
+  justify-content: center;
+}
+
+.password_recovery:hover{
+  color: #ae8dab;
+}
+
+.form-floating{
+  text-align: center;
+}
+
+
+.modal-content{
+  background-color: #383a57;
+}
+
+.modal__title{
+  justify-content: center;
+  font-family: CercoDEMO-Regular;
+}
+
+@media (max-width:800px) {
+
+  .modal__container{
+      padding: 2em 1.5em;
+  }
+
+  .modal__title{
+      font-size: 2rem;
+  }
+}

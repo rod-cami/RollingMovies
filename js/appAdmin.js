@@ -23,6 +23,8 @@ let estadoF = document.getElementById("inputFormEstado");
 let clasificacionF = document.getElementById("inputFormClasificacion");
 let formularioF = document.getElementById('formModificarPelicula');
 let formulario = document.getElementById("formularioPost");
+let navAdmin = document.getElementById("navAdmin");
+let navUser = document.getElementById("navUser");
 
 nombre.addEventListener('blur', ()=>{validarNombre(nombre)});
 descripcion.addEventListener('blur', ()=>{validarDescripcion(descripcion)});
@@ -36,6 +38,21 @@ clasificacion.addEventListener('blur', ()=>{validarClasificacion(clasificacion)}
 botonCerrarAgregar.addEventListener('click', ()=>{limpiarformulario(formulario)});
 botonCerrarModificar.addEventListener('click', ()=>{limpiarformulario(formularioF)});
 formulario.addEventListener('submit', crearPelicula);
+
+
+let tipo = localStorage.getItem('role');
+
+window.addEventListener('load', ()=>{
+  if (tipo == "admin") {
+    navAdmin.className= 'nav-item';
+  }else{
+    navUser.className='nav-item'
+  }
+})
+
+const limpiarLocalStorage = () =>{
+  localStorage.clear();
+}
 
 const obtenerUnaPelicula = async (id) =>{
   const resultado = await fetch(`http://localhost:3000/peliculas/${id}`);
@@ -77,13 +94,11 @@ async function crearPelicula(e){
   e.preventDefault();
   let estadoP;
   let favorito = false;
-
   if (estado.value == 1) {
     estadoP = true;
   } else {
     estadoP = false;
   }
-
   if (validarNombre(nombre) && validarActores(actores) && validarAno(ano) && validarCategoria(categoria) && validarClasificacion(clasificacion) && validarDescripcion(descripcion) && validarDireccion(direccion) && validarDuracion(duracion) && validarPortada(portada)) {
     await Swal.fire({
       title: 'Película agregada con éxito',
@@ -103,11 +118,9 @@ async function crearPelicula(e){
   }
 }
 
-
 const crearTablaPeliculas = async () =>{
   let peliculas = await obtenerPeliculas();
   const cuerpoTabla = document.getElementById("tablaBodyListarPeliculas");
-
   let cuerpo = peliculas.map(pelicula =>(
     `
     <tr>
@@ -126,13 +139,10 @@ const crearTablaPeliculas = async () =>{
   ))
   
   cuerpoTabla.innerHTML = cuerpo.join('');
-
   let arrayTrue = document.querySelectorAll('[name="estadotrue"]')
   arrayTrue.forEach(x => (x.innerHTML = '<div class="d-flex justify-content-center"><i class="bi bi-check-circle text-center"></i></div>'));
-  
   let arrayFalse = document.querySelectorAll('[name="estadofalse"]')
   arrayFalse.forEach(x => (x.innerHTML = '<div class="d-flex justify-content-center"><i class="bi bi-x-circle text-center"></i></div>'));
-  
   let arrayIconoTrue = document.querySelectorAll('[name="iconFavoritotrue"]')
   arrayIconoTrue.forEach(x => (x.innerHTML = '<i class="bi bi-star-fill"></i>'));
   return false;
@@ -149,7 +159,6 @@ async function modificarPelicula(id){
   direccionF.setAttribute('value',peliculaF.direccion);
   actoresF.setAttribute('value',peliculaF.actores);
   clasificacionF.setAttribute('value',peliculaF.clasificacion);
-
   validarNombre(nombreF);
   validarDescripcion(descripcionF);
   validarAno(anoF);
@@ -159,7 +168,6 @@ async function modificarPelicula(id){
   validarDireccion(direccionF);
   validarActores(actoresF);
   validarClasificacion(clasificacionF);
-  
   nombreF.addEventListener('blur', ()=>{validarNombre(nombreF)});
   descripcionF.addEventListener('blur', ()=>{validarDescripcion(descripcionF)});
   categoriaF.addEventListener('blur', ()=>{validarCategoria(categoriaF)});
@@ -173,7 +181,6 @@ async function modificarPelicula(id){
     e.preventDefault()
     cambiarPelicula(peliculaF.id,nombreF,descripcionF,categoriaF,duracionF,portadaF,direccionF,actoresF,anoF,clasificacionF,estadoF.value,peliculaF.favorito);
   });
-  
   return false;
 }
 
@@ -183,7 +190,6 @@ async function cambiarPelicula(id,nombreF,descripcionF,categoriaF,duracionF,port
   } else {
     estado = false;
   }
-
   if (validarNombre(nombreF) && validarActores(actoresF) && validarAno(anoF) && validarCategoria(categoriaF) && validarClasificacion(clasificacionF) && validarDescripcion(descripcionF) && validarDireccion(direccionF) && validarDuracion(duracionF) && validarPortada(portadaF)) {
     await Swal.fire({
       title: 'Película modificada con éxito',
@@ -219,7 +225,6 @@ async function cambiarPelicula(id,nombreF,descripcionF,categoriaF,duracionF,port
       confirmButtonText: 'Ok'
     })
   }
-  
 }
 
 const borrarPelicula = async (id) =>{
@@ -260,6 +265,7 @@ const eliminarPelicula = async (id) => {
 const seleccionarFavorito = async (id) =>{
   let pelicula = await obtenerUnaPelicula(id);
   let banFavorito, banDesfavorito;
+  let favoritos = await listadoFavorito();
 
   if (pelicula.favorito === false) {
     await Swal.fire({
@@ -292,7 +298,7 @@ const seleccionarFavorito = async (id) =>{
       }
     })
   }
-  if (banFavorito) {
+  if (banFavorito && favoritos) {
     await Swal.fire({
       title: 'Marcado como Favorito',
       text: "La película se marcó como favorito",
@@ -308,6 +314,14 @@ const seleccionarFavorito = async (id) =>{
       headers: {
         'Content-type': 'application/json; charset=UTF-8',
       },
+    })
+  }else if(banFavorito && !favoritos){
+    await Swal.fire({
+      title: 'Debe desmarcar',
+      text: "Ya se encuentra una pelicula seleccionada como favorito, porfavor desmarque",
+      icon: 'error',
+      confirmButtonColor: '#2B2D42',
+      confirmButtonText: 'Ok'
     })
   }
   if (banDesfavorito) {
@@ -327,6 +341,25 @@ const seleccionarFavorito = async (id) =>{
         'Content-type': 'application/json; charset=UTF-8',
       },
     })
+  }
+}
+
+const listadoFavorito = async () =>{
+  let peliculas = await obtenerPeliculas();
+  let bandera = 0;
+
+  await peliculas.map(x => {
+    if (x.favorito === true) {
+      bandera++;
+    }
+  })
+
+  console.log(bandera);
+
+  if (bandera >= 1) {
+    return false;
+  }else{
+    return true;
   }
 }
 
@@ -367,7 +400,6 @@ function validarDescripcion(input) {
 
 function validarCategoria(input) {
   let patron = /^[a-zA-Z\u00C0-\u017F,\s]+$/;
-
   if (patron.test(input.value)) {
     input.className = 'form-control is-valid';
     return true
@@ -379,7 +411,6 @@ function validarCategoria(input) {
 
 function validarDuracion(input) {
   let patron = /^[A-Za-z0-9\s]+$/;
-
   if ((patron.test(input.value)) && input.value.length >=2 && input.value.length <= 11) {
     input.className = 'form-control is-valid';
     return true
@@ -413,7 +444,6 @@ function validarPortada(input) {
 
 function validarDireccion(input) {
   let patron = /^[a-zA-Z\u00C0-\u017F.\s]{2,25}$/ ;
-
   if (patron.test(input.value)) {
     input.className = 'form-control is-valid';
     return true
@@ -425,7 +455,6 @@ function validarDireccion(input) {
 
 function validarActores(input) {
   let patron = /^[a-zA-Z\u00C0-\u017F',-.\s]{2,500}$/ ;
-
   if (patron.test(input.value)) {
     input.className = 'form-control is-valid';
     return true
@@ -437,7 +466,6 @@ function validarActores(input) {
 
 function validarAno(input) {
   let patron = /^(189[5-9]|19[0-9][0-9]|20[0-2][0-9])$/ ;
-
   if (patron.test(input.value)) {
     input.className = 'form-control is-valid';
     return true

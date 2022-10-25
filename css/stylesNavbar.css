@@ -13,11 +13,12 @@
   src: url(../fuentes/CercoDEMO-Light.otf);
 }
 
-.bgPagina, .modal-content{
-  background-color: #383a57;
-  font-family: 'Open Sans', sans-serif;
+.fondoNavbar{
+  background-color: #2B2D42;
+  font-family: CercoDEMO-Regular;
 }
 
-.valid-feedback, .invalid-feedback{
-  color: white;
+a{
+  font-family: CercoDEMO-Regular;
 }
+

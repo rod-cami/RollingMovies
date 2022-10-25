@@ -1,0 +1,167 @@
+.card{
+  border: none;
+  border-radius: 0%;
+  background-color: transparent;
+}
+
+.card:hover{
+  transform: scale(1.1)
+}
+
+.btn{
+  border: none;
+}
+
+.imgPortada{
+  height: 70vh;
+  z-index: -100000;
+  position: relative;
+}
+
+.imgPortada:hover{
+  filter: opacity(.5);
+}
+
+.txtcategoria{
+  color: #EDF2F4;
+}
+.categoriasPeliculas{
+  margin-top: 3em;
+}
+
+.body-background{
+  background-color: #14151f;
+ }
+ 
+ .text-peliportada1{
+  position: absolute;
+  top: 39%;
+  margin-left: 2%;
+ }
+
+ .text-peliportada2{
+  position: absolute;
+  top: 45%;
+  margin-left: 2%;
+  margin-right: 2%;
+  text-align: justify;
+ }
+
+ .contenedor{
+  position: relative;
+  display: inline-block;
+ }
+
+ .btn1{
+  border: solid 2px #EF233C;
+  background-color: #EF233C;
+  color: #EDF2F4;
+  position: absolute;
+  top: 63%;
+  margin-left: 2%;
+ }
+
+
+@media (max-width: 480px) and (min-width:360px){
+  .text-peliportada1{
+    position: absolute;
+    top: 20%;
+    margin-left: 2%;
+    font-size: 15px;
+    margin-top: 15px;
+   }
+  
+   .text-peliportada2{
+    display: none;
+   }
+
+   .imgPortada{
+    height: 35vh;
+    z-index: -100000;
+    position: relative;
+  }
+
+  .btn1{
+    position: absolute;
+    top:28%;
+  }
+
+  .card{
+    border: none;
+    border-radius: 0%;
+  }
+  
+  .card:hover{
+    transform: scale(1.1)
+  }
+}
+
+@media (max-width: 768px) and (min-width:481px){
+  .text-peliportada1{
+    position: absolute;
+    top: 15%;
+    margin-left: 2%;
+    font-size: 15px;
+   }
+  
+   .text-peliportada2{
+    position: absolute;
+    top: 20%;
+    margin-left: 2%;
+  }
+
+   .imgPortada{
+    height: 45vh;
+    z-index: -100000;
+    position: relative;
+  }
+
+  .btn1{
+    position: absolute;
+    top:40%
+  }
+
+  .card{
+    border: none;
+    border-radius: 0%;
+  }
+  
+  .card:hover{
+    transform: scale(1.1)
+  }
+}
+
+@media (max-width: 1024px) and (min-width:769px){
+  .text-peliportada1{
+    position: absolute;
+    top: 10%;
+    margin-left: 2%;
+    font-size: 15px;
+   }
+  
+   .text-peliportada2{
+    position: absolute;
+    top: 15%;
+    margin-left: 2%;
+  }
+
+   .imgPortada{
+    height: 45vh;
+    z-index: -100000;
+    position: relative;
+  }
+
+  .btn1{
+    position: absolute;
+    top:40%
+  }
+
+  .card{
+    border: none;
+    border-radius: 0%;
+  }
+  
+  .card:hover{
+    transform: scale(1.1)
+  }
+}

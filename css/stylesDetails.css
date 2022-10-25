@@ -1,0 +1,152 @@
+@font-face {
+    font-family: CercoDEMO-Medium;
+    src: url(../fuentes/CercoDEMO-Medium.otf);
+  }
+  
+  @font-face {
+    font-family: CercoDEMO-Regular;
+    src: url(../fuentes/CercoDEMO-Regular.otf);
+  }
+  
+  @font-face {
+    font-family: CercoDEMO-Light;
+    src: url(../fuentes/CercoDEMO-Light.otf);
+  }
+*{
+    background-color: #101018;
+    color: white;
+} 
+  
+html{
+    font-family: CercoDEMO-Regular;
+    scroll-behavior: smooth;
+}
+
+.body{
+    background-color: #1d1d2c;
+    margin:0;
+    padding:0;
+    overflow-x: hidden;
+    
+}
+
+.detailsPage{
+    color:rgb(226, 226, 226);
+}
+
+.inside-detailsPage{
+    line-height:2;
+}
+
+.inside-detailsPage h1{
+    font-size: 40px;
+}
+
+.inside-detailsPage p{
+    font-size: 17px;
+}
+
+span{
+    color:#8D99AE;
+    font-weight: bold;
+
+}
+
+.line1{
+    height: 2px;
+    background-color:rgb(18, 241, 241);
+    width: 12%;
+    margin-left: 0px;
+    margin-top: 0px;
+    position: absolute;
+}
+
+.btn1{
+    margin-top: 30px;
+}
+
+.btn1 a{
+    background-color:#2B2D42;
+    color: white;
+    padding: 10px 25px;
+    text-decoration: none;
+    border-radius: 30px;
+}
+
+.btn1 a:hover{
+    background: black;
+    color: teal;
+}
+
+.btn1 i{
+    color: rgb(129, 6, 6);
+    padding: 0px 10px;
+}
+
+.btn1 i:hover{
+    color: white;
+}
+
+
+.poster img{
+    width: 100%;
+    border-radius: 20px;
+}
+
+.scroll{
+    width: 50px;
+    height: 50px;
+    background: teal;
+    border-radius: 50px;
+    bottom: 100px;
+    right: 50px;
+    text-decoration: none;
+    font-size: 22px;
+    line-height: 50px;
+    text-align: center;
+}
+.scroll i{
+    color: black;
+}
+
+
+.detailsMovie{
+    font-family: CercoDEMO-Regular;
+    text-align: justify
+}
+
+.heading1{
+    color: white;
+    line-height: 1.5;
+}
+.heading1 h4{
+    font-size: 15px;
+}
+.heading1 h6{
+    font-size: 12px;
+}
+.btn2{
+    margin-top: -30px;
+    margin-left: 150px;
+}
+.btn2 a{
+    font-size: 13px;
+    text-decoration: none;
+    background: teal;
+    padding: 7px 7px;
+    border-radius: 10%;
+    color: white;
+
+}
+
+.ms {
+    margin-left: 1rem;
+}
+
+@media(max-width:900px){
+    .ms {
+        margin-left: 0rem;
+    }
+}
+
+
