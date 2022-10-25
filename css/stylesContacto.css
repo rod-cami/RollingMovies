@@ -1,3 +1,7 @@
+*{
+  font-family: 'Open Sans', sans-serif;
+}
+
 .contactForm{
   display: flex;
   justify-content: center;
