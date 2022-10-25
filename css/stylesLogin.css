@@ -36,12 +36,12 @@ a{
 .text_recuerdame{
   margin-top: 10px;
   text-align: right;
-  color: rgb(0, 0, 0);
+  color: rgb(250, 248, 248);
 }
 
 .password_recovery{
   justify-content: center;
-  color: rgb(14, 24, 67);
+  color: rgb(127, 148, 241);
   
 }
 
@@ -61,6 +61,15 @@ a{
   width: 120px;
   height: 50px;
   border-radius: 10px;
+}
+
+.modal-body{
+  background-color: #01040f;
+}
+
+.modal__title{
+  justify-content: center;
+  font-family: CercoDEMO-Regular;
 }
 
 @media (max-width:800px) {

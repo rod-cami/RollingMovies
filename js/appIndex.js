@@ -109,14 +109,15 @@ const llenarPortada = async () =>{
     }
   })
 
-  portadaPeli = `
-    <img src="${pelicula.portada}" class="position-absolute w-100 imgPortada" alt="">
-    <div class="text-white w-50">
-      <div class="datosPortada">
-        <h5>${pelicula.nombre}</h5>
-        <h6>${pelicula.descripcion}</h6>
-        <button class="btn btn-danger">hola</button>
+  portadaPeli = `<div class"contenedor">
+    <img src="https://www.themoviedb.org/t/p/original/leeHVfEoza4GaZio1tIzevz6XYc.jpg" class=" imgPortada position-relative w-100  col-md-12" alt="Asesino-sin-memoria">
+    <div class="text-white">
+      <div class="datosPortada col-md-6 col-sm-6">
+        <h5 class="text-peliportada1 fs-3 fst-italic">${pelicula.nombre}</h5>
+        <h6 class="text-peliportada2 col-md-6 fw-lighter">${pelicula.descripcion}</h6>
+        <button class="btn1"> <i class="bi bi-play-fill"></i>Reproducir</button>
       </div>
+    </div>
     </div>
   `;
 
