@@ -35,7 +35,7 @@ async function inicioSesion(e) {
     if (user.role == "admin") {
       window.location.href = "../html/pageAdmin.html"
     } else {
-      window.location.href = "../html/index.html"
+      window.location.href = "../html/pageInicio.html"
     }
   } else {
     await Swal.fire({

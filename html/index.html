@@ -1,173 +1,128 @@
 <!DOCTYPE html>
-<html lang="es">
-
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glider-js@1.7.3/glider.min.css">
-  <link rel="stylesheet" href="../css/stylesIndex.css">
-  <link rel="stylesheet" href="../css/stylesFooter.css">
-  <link rel="stylesheet" href="../css/stylesNavbar.css">
-  <title>RollingMovies</title>
+  <link rel="stylesheet" href="../css/stylesLogin.css">
+  <link rel="stylesheet" href="../css/stylesUsers.css">
+  <title>Login</title>
 </head>
-<body class="body-background">
-  <header>
-    <nav class="navbar fixed-top navbar-expand-lg fondoNavbar navbar-dark py-3">
-      <div class="container-fluid">
-        <a class="navbar-brand" href="#"> RollingFilm </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-              <li class="nav-item d-none" id="navAdmin">
-                <a class="nav-link" aria-current="page" href="../html/pageAdmin.html">Administrador</a>
-              </li>
-              <li class="nav-item d-none" id="navUser">
-                <a class="nav-link" aria-current="page" id="nombreUsuarioNav"></a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="../html/index.html">Inicio</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="../html/pageContacto.html">Contacto</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="../html/pageNosotros.html">Acerca De</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" aria-current="page" href="../html/pageLogin2.html" onclick="limpiarLocalStorage()">Cerrar Sesión</a>
-              </li>
-            </ul>
+<body>
+  <div class="mx-auto w-50">
+    <div class="bg-login p-5">
+      <form class="row" id="formularioLogin">
+        <div class="form-floating col-12 mb-2">
+          <input type="email" class="form-control" id="email" placeholder="name@example.com" required>
+          <label for="email">Email</label>
+        </div>
+        <div class="form-floating col-12">
+          <input type="password" class="form-control" id="password" placeholder="Password" required>
+          <label for="password">Contraseña</label>  
+        </div>         
+        <div class="mt-2 col-12">
+          <input class="text_recuerdame" type="checkbox">
+          <span class="text_recuerdame text-white">Recuérdame</span>
+        </div>
+        <div class="col-12 d-flex justify-content-center">
+          <div>
+            <button class="btn btn-danger mt-2" type="submit" id="button">Ingresar</button>
           </div>
         </div>
-      </div>
-    </nav>
-  </header>
-  <main>
-    <div id="portadaPeliculaFavorita">
+        <div class="mt-1 col-12 row">
+          <a class="password_recovery col-md-6 mt-5 text-white" data-bs-toggle="modal" data-bs-target="#exampleModal">¿Has olvidado la contraseña?</a>
+          <a class="password_recovery col-md-6 mt-5 text-white" data-bs-toggle="modal" data-bs-target="#modalRegistro">¿No tienes una cuenta? Suscribete</a>
+        </div>
+      </form>
     </div>
-    <div class="categoriasPeliculas">
-      <h1 class="txtcategoria ms-5">Acción</h1>
-      <div class="position-relative">
-        <div class="d-flex">
-          <button aria-label="Anterior" class="btn btn-anterior-Accion"><i class="bi bi-chevron-left text-white"></i></button>
-          <div class="listaPeliculasAccion card-group" id="categoriaAccion">
-          </div>
-          <button aria-label="Siguiente" class="btn btn-siguiente-Accion"><i class="bi bi-chevron-right text-white"></i></button>
+
+  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5 text-white" id="exampleModalLabel">Recuperar contraseña</h1>
+          <button type="button" id="botonCerrarRecuperar" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-      </div>
-      <h1 class="txtcategoria ms-5 mb-2 mt-4">Romance</h1>
-      <div class="position-relative">
-        <div class="d-flex">
-          <button aria-label="Anterior" class="btn btn-anterior-Romance"><i class="bi bi-chevron-left text-white"></i></button>
-          <div class="listaPeliculasRomance card-group" id="categoriaRomance">
-          </div>
-          <button aria-label="Siguiente" class="btn btn-siguiente-Romance"><i class="bi bi-chevron-right text-white"></i></button>
-        </div>
-      </div>
-      <h1 class="txtcategoria ms-5 mb-2 mt-4">Fantasia</h1>
-      <div class="position-relative">
-        <div class="d-flex">
-          <button aria-label="Anterior" class="btn btn-anterior-Fantasia"><i class="bi bi-chevron-left text-white"></i></button>
-          <div class="listaPeliculasFantasia card-group" id="categoriaFantasia">
-          </div>
-          <button aria-label="Siguiente" class="btn btn-siguiente-Fantasia"><i class="bi bi-chevron-right text-white"></i></button>
-        </div>
-      </div>
-      <h1 class="txtcategoria ms-5 mb-2 mt-4">Infantiles</h1>
-      <div class="position-relative">
-        <div class="d-flex">
-          <button aria-label="Anterior" class="btn btn-anterior-Infantiles"><i class="bi bi-chevron-left text-white"></i></button>
-          <div class="listaPeliculasInfantiles card-group" id="categoriaInfantiles">
-          </div>
-          <button aria-label="Siguiente" class="btn btn-siguiente-Infantiles"><i class="bi bi-chevron-right text-white"></i></button>
-        </div>
-      </div>
-      <h1 class="txtcategoria ms-5 mb-2 mt-4">Terror</h1>
-      <div class="position-relative">
-        <div class="d-flex">
-          <button aria-label="Anterior" class="btn btn-anterior-Terror"><i class="bi bi-chevron-left text-white"></i></button>
-          <div class="listaPeliculasTerror card-group" id="categoriaTerror">
-          </div>
-          <button aria-label="Siguiente" class="btn btn-siguiente-Terror"><i class="bi bi-chevron-right text-white"></i></button>
+        <div class="modal-body">
+          <form class="form-floating" id="formularioRecuperarContrasena">
+            <div class="form-floating col-12 mb-2">
+              <input type="email" class="form-control" id="emailRecuperar" placeholder="name@example.com" required>
+              <label for="emailRecuperar">Email</label>
+              <div class="valid-feedback">Email correcto!</div>
+              <div class="invalid-feedback">El email ingresado es incorrecto o no coincide con algun usuario.</div>
+            </div>
+            <div class="form-floating col-12 mb-2">
+              <input type="password" class="form-control" id="contrasenaRecuperar" placeholder="Contraseña nuevv" required>
+              <label for="contrasenaRecuperar">Contraseña nueva</label>  
+              <div class="valid-feedback">Contraseña correcta!</div>
+              <div class="invalid-feedback">Por favor ingrese una contraseña correcta</div>
+            </div> 
+            <div class="form-floating col-12 mb-2">
+              <input type="password" class="form-control" id="contrasenaCRecuperar"  placeholder="Confimar contraseña" required>
+              <label for="contrasenaCRecuperar">Confimar contraseña</label>  
+              <div class="valid-feedback">Contraseña correcta!</div>
+              <div class="invalid-feedback">Las contraseñas no coinciden</div>
+            </div> 
+            <div>
+              <button class="btn btn-danger mt-2" type="submit" id="botonRecuperar">Guardar contraseña</button>
+            </div>
+          </form>
         </div>
       </div>
     </div>
-  </main>
-  <footer class="bottom">
-    <section class="bg-footer text-light py-3">
-      <section class="container">
-        <article class="mb-4  d-flex justify-content-center">
-          <img src="../img/logoRollingCode.png" alt="logo de Rolling Movies" class="w-25" />
-        </article>
-        <article class="row">
-          <div class="col-sm-12 col-lg-4 mb-4 d-flex justify-content-center">
-            <div>
-              <h5 class="text-secondary">Navegación</h5>
-              <ul class="lista">
-                <li>
-                  <a href="../html/index.html" class="text-secondary">Inicio</a>
-                </li>
-                <li>
-                  <a href="../html/pageContacto.html" class="text-secondary">Contacto</a>
-                </li>
-                <li>
-                  <a href="../html/pageNosotros.html" class="text-secondary">¿Quienes somos?</a>
-                </li>
-                <li>
-                  <a href="../html/page404.html" class="text-secondary">Ayuda</a>
-                </li>
-                <li>
-                  <a href="../html/page404.html" class="text-secondary">Seguridad</a>
-                </li>
-              </ul>
-            </div>
+  </div>
+  <div class="modal fade" id="modalRegistro" tabindex="-1" aria-labelledby="modalRegistroLabel" aria-hidden="true">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h1 class="modal-title fs-5 text-white" id="modalRegistroLabel">
+            Suscribete
+          </h1>
+          <button type="button" class="btn-close btn-close-white" id="botonCerrarRegistro" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <div class="p-5">
+            <form class="row" id="formularioRegistro">
+              <div class="mb-3 col-12 form-floating">
+                  <input type="text" class="form-control" id="inputRegistroNombre" placeholder="Nombre de Usuario" required>
+                  <label for="inputRegistroNombre">Nombre  de Usuario</label>
+                  <div class="valid-feedback">Nombre correcto!</div>
+                  <div class="invalid-feedback">Por favor ingrese un nombre correcto. </div>
+              </div>
+              <div class="form-floating mb-3 col-12">
+                  <input type="email" class="form-control" id="inputRegistroEmail" placeholder="Email" required>
+                  <label for="inputRegistroEmail">Email</label>
+                  <div class="valid-feedback">Email correcta!</div>
+                  <div class="invalid-feedback">Por favor ingrese un email correcto.</div>
+              </div>
+              <div class="form-floating mb-3 col-12">
+                  <input type="password" class="form-control" id="inputRegistroContrasena" placeholder="Contraseña" required>
+                  <label for="inputRegistroContrasena">Contraseña</label>
+                  <div class="valid-feedback">Conrtaseña correcta!</div>
+                  <div class="invalid-feedback">Por favor ingrese un contraseña correcta</div>
+              </div>
+              <div class="form-floating mb-3 col-12">
+                  <input type="password" class="form-control" id="inputRegistroContrasenaC" placeholder="Confirmar Contraseña" required>
+                  <label for="inputRegistroContrasenaC">Confirmar Contraseña</label>
+                  <div class="valid-feedback">Contraseña correcta!</div>
+                  <div class="invalid-feedback">Las contraseñas no coinciden</div>
+              </div>
+              <div class="col-12 d-flex justify-content-center mt-2">
+                  <div>
+                    <button type="submit" class="btn btn-danger" id="botonRegistroEnviar">Registrar</button>
+                  </div>
+              </div>
+          </form>
           </div>
-          <div class="col-sm-12 col-lg-4 mb-4 d-flex justify-content-center">
-            <div>
-              <h5 class="text-secondary">Descubrí</h5>
-              <ul class="lista">
-                <li>
-                  <a href="../html/index.html" class="text-secondary">Películas</a>
-                </li>
-                <li>
-                  <a href="../html/page404.html" class="text-secondary">Series</a>
-                </li>
-                <li>
-                  <a href="../html/page404.html" class="text-secondary">Documentales</a>
-                </li>
-                <li>
-                  <a href="../html/page404.html" class="text-secondary">Miniseries</a>
-                </li>
-                <li>
-                  <a href="../html/page404.html" class="text-secondary">Sagas</a>
-                </li>
-              </ul>
-            </div>
-          </div>
-          <div class="col-sm-12 col-lg-4 mb-4 d-flex justify-content-center">
-            <div>
-              <h5 class="text-secondary">Descarga la App</h5>
-              <a href="https://www.apple.com/la/ios/app-store/" class="m-3" target="_blank"><i class="bi bi-google-play text-white"></i></i></a>
-              <a href="https://play.google.com/store?hl=es-419" class="m-3" target="_blank"><i class="bi bi-apple text-white"></i></a>
-            </div>
-          </div>
-        </article>
-      </section>
-      <div>
-        <p class="text-center text-white">&copy; Todos los derechos reservados.</p>
+        </div>
       </div>
-    </section>
-  </footer>
+    </div>
+  </div>
   <!-- JavaScript Bundle with Popper -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3" crossorigin="anonymous"></script>
-  <script src="https://cdn.jsdelivr.net/npm/glider-js@1.7.3/glider.min.js"></script>
-  <script src="../js/appIndex.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+  <script src="../js/appUsers.js"></script>
+  <script src="../js/appLogin2.js"></script>
 </body>
-
 </html>

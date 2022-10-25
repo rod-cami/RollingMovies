@@ -2,6 +2,25 @@
 let id = localStorage.getItem('id');
 window.addEventListener('load', ()=>{llenarPagina(id)});
 
+let navAdmin = document.getElementById("navAdmin");
+let navUser = document.getElementById("navUser");
+let nombreUsuarioNav = document.getElementById('nombreUsuarioNav')
+
+let nombreUsuarioNavbar = localStorage.getItem('name')
+let tipo = localStorage.getItem('role');
+
+window.addEventListener('load', ()=>{
+  if (tipo == "admin") {
+    navAdmin.className= 'nav-item';
+  }else{
+    navUser.className='nav-item';
+    nombreUsuarioNav.innerHTML = nombreUsuarioNavbar;
+  }
+})
+const limpiarLocalStorage = () =>{
+  localStorage.clear();
+}
+
 const obtenerUnaPelicula = async (id) =>{
   const resultado = await fetch(`http://localhost:3000/peliculas/${id}`);
   const pelicula = await resultado.json();
