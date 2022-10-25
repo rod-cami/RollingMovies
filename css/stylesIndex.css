@@ -58,3 +58,74 @@
   top: 62%;
   margin-left: 2%;
  }
+
+
+@media (max-width: 480px) and (min-width:360px){
+  .text-peliportada1{
+    position: absolute;
+    top: 26%;
+    margin-left: 2%;
+    font-size: 15px;
+   }
+  
+   .text-peliportada2{
+    display: none;
+   }
+
+   .imgPortada{
+    height: 35vh;
+    z-index: -100000;
+    position: relative;
+  }
+
+  .btn1{
+    position: absolute;
+    top:30%
+
+  }
+
+  .card{
+    border: none;
+    border-radius: 0%;
+  }
+  
+  .card:hover{
+    transform: scale(1.1)
+  }
+}
+
+@media (max-width: 768px) and (min-width:481px){
+  .text-peliportada1{
+    position: absolute;
+    top: 15%;
+    margin-left: 2%;
+    font-size: 15px;
+   }
+  
+   .text-peliportada2{
+    position: absolute;
+    top: 20%;
+    margin-left: 2%;
+    
+   }
+
+   .imgPortada{
+    height: 45vh;
+    z-index: -100000;
+    position: relative;
+  }
+
+  .btn1{
+    position: absolute;
+    top:40%
+  }
+
+  .card{
+    border: none;
+    border-radius: 0%;
+  }
+  
+  .card:hover{
+    transform: scale(1.1)
+  }
+}
