@@ -15,7 +15,7 @@ En este proyecto desarrollamos de forma grupal una página web con un catálogo 
 - https://www.themoviedb.org/ : usado para rellenar la db.json
 - Youtube : utilizado para aprender más.
 - RollingCode: utilizado para recordar las clases.
-- https://developer.mozilla.org/es/ : utilizado para resolver nuesrtas dudas sobre métodos de JS.
+- https://developer.mozilla.org/es/ : utilizado para resolver nuestras dudas sobre métodos de JS.
 
 ***
 

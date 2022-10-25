@@ -12,6 +12,7 @@
       "clasificacion": "R",
       "estado": true,
       "favorito": true,
+      "trailer": "https://www.youtube.com/watch?v=50s-JEK_XQM",
       "id": 1
     },
     {
@@ -26,6 +27,7 @@
       "clasificacion": "R",
       "estado": true,
       "favorito": false,
+      "trailer": "https://www.youtube.com/watch?v=jUPwb7yz1Nk",
       "id": 2
     },
     {
@@ -40,6 +42,7 @@
       "clasificacion": "PG-13",
       "estado": true,
       "favorito": false,
+      "trailer": "https://www.youtube.com/watch?v=mtUmh_cgPn8",
       "id": 3
     },
     {
@@ -54,6 +57,7 @@
       "clasificacion": "R",
       "estado": true,
       "favorito": false,
+      "trailer": "https://www.youtube.com/watch?v=D7E942Cw4Ak",
       "id": 4
     },
     {
@@ -68,6 +72,7 @@
       "clasificacion": "PG-13",
       "estado": true,
       "favorito": false,
+      "trailer":"https://www.youtube.com/watch?v=96ZHajD-JP4",
       "id": 5
     },
     {
@@ -81,7 +86,8 @@
       "ano": 2019,
       "clasificacion": "PG-13",
       "estado": true,
-      "favorito": false,
+      "favorito": false,  
+      "trailer":"https://www.youtube.com/watch?v=znk2OICHbjY",
       "id": 6
     },
     {
@@ -96,7 +102,9 @@
       "clasificacion": "R",
       "estado": true,
       "favorito": false,
+      "trailer": "https://www.youtube.com/watch?v=18fMBzX5PdA",
       "id": 7
+    
     },
     {
       "nombre": "Red Notice",
@@ -110,6 +118,7 @@
       "clasificacion": "PG-13",
       "estado": true,
       "favorito": false,
+      "trailer": "https://www.youtube.com/watch?v=Pj0wz7zu3Ms",
       "id": 8
     },
     {
@@ -124,6 +133,7 @@
       "clasificacion": "R",
       "estado": true,
       "favorito": false,
+      "trailer": "https://www.youtube.com/watch?v=G9K7lALCiRA",
       "id": 9
     },
     {
@@ -138,6 +148,7 @@
       "clasificacion": "PG-13",
       "estado": true,
       "favorito": false,
+      "trailer": "https://www.youtube.com/watch?v=phsWSladwOI",
       "id": 10
     },
     {
@@ -152,6 +163,7 @@
       "clasificacion": "PG-13",
       "estado": true,
       "favorito": false,
+      "trailer": "https://www.youtube.com/watch?v=toDq4DWRZwA",
       "id": 11
     },
     {
@@ -166,6 +178,7 @@
       "clasificacion": "PG-13",
       "estado": true,
       "favorito": false,
+      "trailer": "https://www.youtube.com/watch?v=XJGRkUtSFBo",
       "id": 12
     },
     {
@@ -180,6 +193,7 @@
       "clasificacion": "PG-13",
       "estado": true,
       "favorito": false,
+      "trailer": "https://www.youtube.com/watch?v=YX52PKt-jtA",
       "id": 13
     },
     {
@@ -194,6 +208,7 @@
       "clasificacion": "PG-13",
       "estado": true,
       "favorito": false,
+      "trailer": "https://www.youtube.com/watch?v=PG5PvKjTGsI",
       "id": 14
     },
     {
@@ -208,6 +223,7 @@
       "clasificacion": "PG-13",
       "estado": true,
       "favorito": false,
+      "trailer": "https://www.youtube.com/watch?v=9Lt8QAZkc94",
       "id": 15
     },
     {
@@ -222,6 +238,7 @@
       "clasificacion": "PG-13",
       "estado": true,
       "favorito": false,
+      "trailer": "https://www.youtube.com/watch?v=PQ0RIeH__hI",
       "id": 16
     },
     {
@@ -236,6 +253,7 @@
       "clasificacion": "PG-13",
       "estado": true,
       "favorito": false,
+      "trailer": "https://www.youtube.com/watch?v=zIH-TNkb8ws",
       "id": 17
     },
     {
@@ -250,6 +268,7 @@
       "clasificacion": "PG-13",
       "estado": true,
       "favorito": false,
+      "trailer": "https://www.youtube.com/watch?v=05RNgZdxJcg",
       "id": 18
     },
     {
@@ -264,6 +283,7 @@
       "clasificacion": "PG-13",
       "estado": true,
       "favorito": false,
+      "trailer": "https://www.youtube.com/watch?v=kVrqfYjkTdQ",
       "id": 19
     },
     {
@@ -278,6 +298,7 @@
       "clasificacion": "PG-13",
       "estado": true,
       "favorito": false,
+      "trailer": "https://www.youtube.com/watch?v=sbNbeSCQfX8",
       "id": 20
     },
     {
@@ -292,6 +313,7 @@
       "clasificacion": "R",
       "estado": true,
       "favorito": false,
+      "trailer": "https://www.youtube.com/watch?v=e0at_6P2qVw",
       "id": 21
     },
     {
@@ -306,6 +328,7 @@
       "clasificacion": "PG-13",
       "estado": true,
       "favorito": false,
+      "trailer":"https://www.youtube.com/watch?v=021-tHmxjEY",
       "id": 22
     },
     {
@@ -320,6 +343,7 @@
       "clasificacion": "R",
       "estado": true,
       "favorito": false,
+      "trailer": "https://www.youtube.com/watch?v=p8XWtiIvfAo",
       "id": 23
     },
     {
@@ -334,6 +358,7 @@
       "clasificacion": "R",
       "estado": true,
       "favorito": false,
+      "trailer": "https://www.youtube.com/watch?v=oUyHULb7xDI",
       "id": 24
     },
     {
@@ -348,6 +373,7 @@
       "clasificacion": "R",
       "estado": true,
       "favorito": false,
+      "trailer": "https://www.youtube.com/watch?v=Y8z1LAkgR0s",
       "id": 25
     },
     {
@@ -362,6 +388,7 @@
       "clasificacion": "R",
       "estado": true,
       "favorito": false,
+      "trailer": "https://www.youtube.com/watch?v=HSVPnWSX7Vo",
       "id": 26
     },
     {
@@ -369,13 +396,14 @@
       "descripcion": "Ellison Oswald, escritor de historias criminales está en una mala racha, no ha tenido un éxito en más de 10 años y está desesperado. Cuando descubre una película que muestra las muertes de una familia, él promete resolver el misterio.",
       "categoria": "Terror",
       "duracion": "1 hr 50 min",
-      "portada": "https://images.app.goo.gl/LRWMBLz1Pu3tWn2S8",
+      "portada": "https://pics.filmaffinity.com/Sinister-578046633-large.jpg",
       "direccion": "Scott Derrickson",
       "actores": "Ethan Hawke, Juliet Rylance, Fred Thompson",
       "ano": "2013",
       "clasificacion": "R",
       "estado": true,
       "favorito": false,
+      "trailer":"https://www.youtube.com/watch?v=6BiMQPil_4M",
       "id": 27
     },
     {
@@ -390,6 +418,7 @@
       "clasificacion": "R",
       "estado": true,
       "favorito": false,
+      "trailer": "https://www.youtube.com/watch?v=4d5_lrn9v-g",
       "id": 28
     },
     {
@@ -404,6 +433,7 @@
       "clasificacion": "R",
       "estado": true,
       "favorito": false,
+      "trailer": "https://www.youtube.com/watch?v=X_iexSG2S3U",
       "id": 29
     },
     {
@@ -418,6 +448,7 @@
       "clasificacion": "R",
       "estado": true,
       "favorito": false,
+      "trailer": "https://www.youtube.com/watch?v=_oBZ_zTz0Nw",
       "id": 30
     },
     {
@@ -432,6 +463,7 @@
       "clasificacion": "PG-13",
       "estado": true,
       "favorito": false,
+      "trailer":"https://www.youtube.com/watch?v=6A1tfuRM83k",
       "id": 31
     },
     {
@@ -446,6 +478,7 @@
       "clasificacion": "PG-13",
       "estado": true,
       "favorito": false,
+      "trailer": "https://www.youtube.com/watch?v=44hd7B0euMk",
       "id": 32
     },
     {
@@ -460,6 +493,7 @@
       "clasificacion": "PG-13",
       "estado": true,
       "favorito": false,
+      "trailer":"https://www.youtube.com/watch?v=E5xC9i_1vvY",
       "id": 33
     },
     {
@@ -474,6 +508,7 @@
       "clasificacion": "PG-13",
       "estado": true,
       "favorito": false,
+      "trailer":"https://www.youtube.com/watch?v=6FvFxKrdbew",
       "id": 34
     },
     {
@@ -488,6 +523,7 @@
       "clasificacion": "PG-13",
       "estado": true,
       "favorito": false,
+      "trailer": "https://www.youtube.com/watch?v=_Xtd-76kZjQ",
       "id": 35
     },
     {
@@ -502,6 +538,7 @@
       "clasificacion": "PG-13",
       "estado": true,
       "favorito": false,
+      "trailer": "https://www.youtube.com/watch?v=BPjbiZQmBI4",
       "id": 36
     },
     {
@@ -516,6 +553,7 @@
       "clasificacion": "PG-13",
       "estado": true,
       "favorito": false,
+      "trailer": "https://www.youtube.com/watch?v=yZLxtW7qq48",
       "id": 37
     },
     {
@@ -530,6 +568,7 @@
       "clasificacion": "PG",
       "estado": true,
       "favorito": false,
+      "trailer": "https://www.youtube.com/watch?v=PCCuJbPz0Oo",
       "id": 38
     },
     {
@@ -544,6 +583,7 @@
       "clasificacion": "PG-13",
       "estado": true,
       "favorito": false,
+      "trailer": "https://www.youtube.com/watch?v=v6uwWIK3p4g",
       "id": 39
     },
     {
@@ -558,6 +598,7 @@
       "clasificacion": "R",
       "estado": true,
       "favorito": false,
+      "trailer": "https://www.youtube.com/watch?v=mJXEubralJc",
       "id": 40
     },
     {
@@ -572,6 +613,7 @@
       "clasificacion": "PG",
       "estado": true,
       "favorito": false,
+      "trailer": "https://www.youtube.com/watch?v=WlTMOzXBGBs",
       "id": 41
     },
     {
@@ -586,6 +628,7 @@
       "clasificacion": "PG",
       "estado": true,
       "favorito": false,
+      "trailer": "https://www.youtube.com/watch?v=EgXQmSW16YY",
       "id": 42
     },
     {
@@ -600,6 +643,7 @@
       "clasificacion": "PG-13",
       "estado": true,
       "favorito": false,
+      "trailer":"https://www.youtube.com/watch?v=VXPM21vh8NU",
       "id": 43
     },
     {
@@ -614,6 +658,7 @@
       "clasificacion": "PG",
       "estado": true,
       "favorito": false,
+      "trailer": "https://www.youtube.com/watch?v=q18vER94k00",
       "id": 44
     },
     {
@@ -628,6 +673,7 @@
       "clasificacion": "PG",
       "estado": true,
       "favorito": false,
+      "trailer": "https://www.youtube.com/watch?v=zdldw6XyMoE",
       "id": 45
     },
     {
@@ -642,6 +688,7 @@
       "clasificacion": "G",
       "estado": true,
       "favorito": false,
+      "trailer": "https://www.youtube.com/watch?v=XpMjfUJ1lUc",
       "id": 46
     },
     {
@@ -656,6 +703,7 @@
       "clasificacion": "G",
       "estado": true,
       "favorito": false,
+      "trailer": "https://www.youtube.com/watch?v=PiSlEMzFGkE",
       "id": 47
     },
     {
@@ -670,6 +718,7 @@
       "clasificacion": "G",
       "estado": true,
       "favorito": false,
+      "trailer": "https://www.youtube.com/watch?v=3D8ZtKRa5Bs",
       "id": 48
     },
     {
@@ -684,6 +733,7 @@
       "clasificacion": "G",
       "estado": true,
       "favorito": false,
+      "trailer": "https://www.youtube.com/watch?v=irhNvQuMmBA",
       "id": 49
     },
     {
@@ -698,6 +748,7 @@
       "clasificacion": "G",
       "estado": true,
       "favorito": false,
+      "trailer": "https://www.youtube.com/watch?v=QIIjQBNRk2o",
       "id": 50
     }
   ],

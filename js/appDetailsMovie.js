@@ -22,6 +22,8 @@ const llenarPagina = async (id) =>{
             <p>${pelicula.ano}‧ ${pelicula.categoria} ‧ ${pelicula.duracion}</p>
               <div class="btn1">
               <a href="#"><i class="fas fa-play"></i>Ver Ahora</a>
+              <a href="${pelicula.trailer}" target="_blank"><i class="fas fa-play"></i>Trailer</button></a>
+              </div>
               <p class="detailsMovie">${pelicula.descripcion}</p>
               </div>
             </div>

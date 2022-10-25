@@ -1,16 +1,24 @@
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,500;1,600;1,700;1,800;1,900&display=swap');
-*{
-    margin: 0;
-    padding: 0;
-    font-family: 'Montserrat', sans-serif;
-    box-sizing: border-box;
-
-}
+@font-face {
+    font-family: CercoDEMO-Medium;
+    src: url(../fuentes/CercoDEMO-Medium.otf);
+  }
+  
+  @font-face {
+    font-family: CercoDEMO-Regular;
+    src: url(../fuentes/CercoDEMO-Regular.otf);
+  }
+  
+  @font-face {
+    font-family: CercoDEMO-Light;
+    src: url(../fuentes/CercoDEMO-Light.otf);
+  }
+  
 html{
+    font-family: CercoDEMO-Regular;
     scroll-behavior: smooth;
 }
 body{
-    background-color: #2B2D42;
+    background-color: #12121a;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -23,32 +31,38 @@ body{
     margin-top: 100px;
     margin-left: 60px;
 }
+
 .inside-detailsPage{
     line-height:2;
 }
+
 .inside-detailsPage h1{
     font-size: 40px;
 }
+
 .inside-detailsPage p{
     font-size: 17px;
 }
+
 span{
     color:#8D99AE;
     font-weight: bold;
 
 }
+
 .line1{
-height: 2px;
-background-color:rgb(18, 241, 241);
-width: 12%;
-margin-left: 0px;
-margin-top: 0px;
-position: absolute;
+    height: 2px;
+    background-color:rgb(18, 241, 241);
+    width: 12%;
+    margin-left: 0px;
+    margin-top: 0px;
+    position: absolute;
 }
 
 .btn1{
     margin-top: 30px;
 }
+
 .btn1 a{
     background-color:#2B2D42;
     color: white;
@@ -56,6 +70,7 @@ position: absolute;
     text-decoration: none;
     border-radius: 30px;
 }
+
 .btn1 a:hover{
     background: black;
     color: teal;
@@ -65,15 +80,19 @@ position: absolute;
     color: black;
     padding: 0px 10px;
 }
+
 .btn1 i:hover{
     color: white;
 }
+
 .poster{
-    margin-top: 120px;
-    margin-right: 10px;
+    margin-top: 50px;
+    margin-right: 90px;
 }
+
 .poster img{
-    height:320px;
+    height:400px;
+    width: 500px;
     float: right;
     border-radius: 10px;
 }
@@ -97,6 +116,7 @@ position: absolute;
 
 
 .detailsMovie{
+    font-family: CercoDEMO-Regular;
     margin-right: 30px;
     margin-top: 50px;
     text-align: justify
@@ -126,6 +146,8 @@ position: absolute;
 
 }
 
-@media(max-width:360px){
-    
+@media(max-width:414px){
+    .poster img-none{
+        
+    }
 }
