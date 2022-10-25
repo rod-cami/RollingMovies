@@ -12,24 +12,26 @@
     font-family: CercoDEMO-Light;
     src: url(../fuentes/CercoDEMO-Light.otf);
   }
+*{
+    background-color: #101018;
+    color: white;
+} 
   
 html{
     font-family: CercoDEMO-Regular;
     scroll-behavior: smooth;
 }
-body{
-    background-color: #12121a;
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100vh;
+
+.body{
+    background-color: #1d1d2c;
+    margin:0;
+    padding:0;
+    overflow-x: hidden;
+    
 }
 
 .detailsPage{
-    position: absolute;
-    color:white;
-    margin-top: 100px;
-    margin-left: 60px;
+    color:rgb(226, 226, 226);
 }
 
 .inside-detailsPage{
@@ -77,7 +79,7 @@ span{
 }
 
 .btn1 i{
-    color: black;
+    color: rgb(129, 6, 6);
     padding: 0px 10px;
 }
 
@@ -85,20 +87,13 @@ span{
     color: white;
 }
 
-.poster{
-    margin-top: 50px;
-    margin-right: 90px;
-}
 
 .poster img{
-    height:400px;
-    width: 500px;
-    float: right;
-    border-radius: 10px;
+    width: 100%;
+    border-radius: 20px;
 }
 
 .scroll{
-    position: fixed;
     width: 50px;
     height: 50px;
     background: teal;
@@ -117,8 +112,6 @@ span{
 
 .detailsMovie{
     font-family: CercoDEMO-Regular;
-    margin-right: 30px;
-    margin-top: 50px;
     text-align: justify
 }
 
@@ -146,8 +139,14 @@ span{
 
 }
 
-@media(max-width:414px){
-    .poster img-none{
-        
+.ms {
+    margin-left: 1rem;
+}
+
+@media(max-width:900px){
+    .ms {
+        margin-left: 0rem;
     }
 }
+
+

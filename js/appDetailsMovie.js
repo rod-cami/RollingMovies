@@ -13,27 +13,30 @@ const llenarPagina = async (id) =>{
   let contenedor = document.getElementById('contenidoDetalles')
 
   let contenido = 
+ 
   `
-  <div class="detailsPage">
-            <div class="inside-detailsPage">
-              <span>A CONTINUACIÓN...</span>
-            <div class="line1"></div>
-            <h1>${pelicula.nombre}</h1>
-            <p>${pelicula.ano}‧ ${pelicula.categoria} ‧ ${pelicula.duracion}</p>
-              <div class="btn1">
+  <div class="row p-2">
+  <div class="container p-1 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
+    <div class="inside-detailsPage ms">
+        <div class="">A CONTINUACIÓN...</div>
+        <div class="line1"></div>
+        <div class="mt-3"><h1>${pelicula.nombre}</h1></div>
+        <p>${pelicula.ano}‧ ${pelicula.categoria} ‧ ${pelicula.duracion}</p>
+          <div class="btn1">
               <a href="#"><i class="fas fa-play"></i>Ver Ahora</a>
-              <a href="${pelicula.trailer}" target="_blank"><i class="fas fa-play"></i>Trailer</button></a>
-              </div>
-              <p class="detailsMovie">${pelicula.descripcion}</p>
-              </div>
-            </div>
-        </div>
+              <a class="ms-2" href="${pelicula.trailer}" target="_blank"><i class="fas fa-play"></i>Trailer</a>
+          </div>
+          <p class="detailsMovie mt-4">${pelicula.descripcion}</p>
+      </div>
+  </div>
+  <div class="container p-1 col-xxl-6 col-xl-6 col-lg-6 col-sm-12 col-md-12">
     <div class="poster">
-        <img src="${pelicula.portada}" alt="">
-    </div>
-  
+        <img class="" src="${pelicula.portada}" alt="">
+      </div>
+  </div>
+</div>
+    
   `;
-
   contenedor.innerHTML = contenido;
   
 }
