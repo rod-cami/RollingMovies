@@ -1,6 +1,7 @@
 .card{
   border: none;
   border-radius: 0%;
+  background-color: transparent;
 }
 
 .card:hover{
@@ -29,7 +30,7 @@
 }
 
 .body-background{
-  background-color: #27293C;
+  background-color: #383a57;
  }
  
  .text-peliportada1{

@@ -1,25 +1,37 @@
-const createCard = async () => {
-  const personajes = await getPersonajes();
-  const div = document.getElementById('card');
 
-  const cards = personajes.map(personaje => (`
-    <div class="card m-3 estiloCard" style="width: 18rem;">
-      <img src=${personaje.image} class="card-img-top" alt="...">
-      <div class="card-body">
-        <h5 class="card-title">${personaje.name}</h5>
-        <p class="card-text">Status: ${personaje.status}</p>
-        <p class="card-text">Species: ${personaje.species}</p>
-        <button onclick='redirectDetail(${personaje.id})' class="btn btn-primary">Go somewhere</button>
-      </div>
-    </div>
-  `))
+let id = localStorage.getItem('id');
+window.addEventListener('load', ()=>{llenarPagina(id)});
 
-  div.innerHTML = cards
+const obtenerUnaPelicula = async (id) =>{
+  const resultado = await fetch(`http://localhost:3000/peliculas/${id}`);
+  const pelicula = await resultado.json();
+  return pelicula;
 }
 
-createCard()
+const llenarPagina = async (id) =>{
+  let pelicula = await obtenerUnaPelicula(id);
+  let contenedor = document.getElementById('contenidoDetalles')
 
-const redirectDetail = (id) => {
-  localStorage.setItem('id', id)
-  window.location.href = '/personajes.html'
+  let contenido = 
+  `
+  <div class="detailsPage">
+            <div class="inside-detailsPage">
+              <span>A CONTINUACIÓN...</span>
+            <div class="line1"></div>
+            <h1>${pelicula.nombre}</h1>
+            <p>${pelicula.ano}‧ ${pelicula.categoria} ‧ ${pelicula.duracion}</p>
+              <div class="btn1">
+              <a href="#"><i class="fas fa-play"></i>Ver Ahora</a>
+              <p class="detailsMovie">${pelicula.descripcion}</p>
+              </div>
+            </div>
+        </div>
+    <div class="poster">
+        <img src="${pelicula.portada}" alt="">
+    </div>
+  
+  `;
+
+  contenedor.innerHTML = contenido;
+  
 }

@@ -1,3 +1,18 @@
+let navAdmin = document.getElementById("navAdmin");
+let navUser = document.getElementById("navUser");
+let nombreUsuarioNav = document.getElementById('nombreUsuarioNav')
+
+let nombreUsuarioNavbar = localStorage.getItem('name')
+let tipo = localStorage.getItem('role');
+
+window.addEventListener('load', ()=>{
+  if (tipo == "admin") {
+    navAdmin.className= 'nav-item';
+  }else{
+    navUser.className='nav-item';
+    nombreUsuarioNav.innerHTML = nombreUsuarioNavbar;
+  }
+})
 
 const obtenerPeliculas = async () =>{
   const resultado = await fetch('http://localhost:3000/peliculas');
@@ -28,9 +43,9 @@ const llenarCategorias = async () =>{
       arrayAccion[i] = 
       `
       <div class="card m-2" style="width: 18rem;">
-        <img src="${x.portada}" class="card-img-top" alt="...">
+        <img src="${x.portada}" class="card-img-top" alt="..." onclick="redireccionDetalle(${x.id})">
         <div class="card-body">
-          <h5 class="card-title text-center">${x.nombre}</h5>
+          <h5 class="card-title text-center text-white">${x.nombre}</h5>
         </div>
       </div>
       `;
@@ -41,9 +56,9 @@ const llenarCategorias = async () =>{
       arrayRomance[j] = 
       `
       <div class="card m-2" style="width: 18rem;">
-        <img src="${x.portada}" class="card-img-top" alt="...">
+        <img src="${x.portada}" class="card-img-top" alt="..." onclick="redireccionDetalle(${x.id})">
         <div class="card-body">
-          <h5 class="card-title text-center">${x.nombre}</h5>
+          <h5 class="card-title text-center text-white">${x.nombre}</h5>
         </div>
       </div>
       `;
@@ -54,9 +69,9 @@ const llenarCategorias = async () =>{
       arrayTerror[q] = 
       `
       <div class="card m-2" style="width: 18rem;">
-        <img src="${x.portada}" class="card-img-top" alt="...">
+        <img src="${x.portada}" class="card-img-top" alt="..." onclick="redireccionDetalle(${x.id})">
         <div class="card-body">
-          <h5 class="card-title text-center">${x.nombre}</h5>
+          <h5 class="card-title text-center text-white">${x.nombre}</h5>
         </div>
       </div>
       `;
@@ -67,9 +82,9 @@ const llenarCategorias = async () =>{
       arrayFantasia[p] = 
       `
       <div class="card m-2" style="width: 18rem;">
-        <img src="${x.portada}" class="card-img-top" alt="...">
+        <img src="${x.portada}" class="card-img-top" alt="..." onclick="redireccionDetalle(${x.id})">
         <div class="card-body">
-          <h5 class="card-title text-center">${x.nombre}</h5>
+          <h5 class="card-title text-center text-white">${x.nombre}</h5>
         </div>
       </div>
       `;
@@ -80,9 +95,9 @@ const llenarCategorias = async () =>{
       arrayInfantiles[k] = 
       `
       <div class="card m-2" style="width: 18rem;">
-        <img src="${x.portada}" class="card-img-top" alt="...">
+        <img src="${x.portada}" class="card-img-top" alt="..." onclick="redireccionDetalle(${x.id})">
         <div class="card-body">
-          <h5 class="card-title text-center">${x.nombre}</h5>
+          <h5 class="card-title text-center text-white">${x.nombre}</h5>
         </div>
       </div>
       `;
@@ -96,6 +111,11 @@ const llenarCategorias = async () =>{
   infantil.innerHTML = arrayInfantiles.join('');
 
   realizarCarrousel();
+}
+
+const redireccionDetalle = (id) =>{
+  localStorage.setItem('id', id);
+  window.location.href = "../html/detailsPage.html"
 }
 
 const llenarPortada = async () =>{
@@ -116,7 +136,7 @@ const llenarPortada = async () =>{
       <div class="datosPortada col-md-6 col-sm-6">
         <h5 class="text-peliportada1 fs-3 fst-italic">${pelicula.nombre}</h5>
         <h6 class="text-peliportada2 col-md-6 fw-lighter">${pelicula.descripcion}</h6>
-        <button class="btn1"> <i class="bi bi-play-fill"></i>Reproducir</button>
+        <button class="btn btn1 btn-danger"> <i class="bi bi-play-fill"></i>Reproducir</button>
       </div>
     </div>
     </div>

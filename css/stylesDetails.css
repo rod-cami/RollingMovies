@@ -10,7 +10,7 @@ html{
     scroll-behavior: smooth;
 }
 body{
-    background-image: linear-gradient( rgba(0,0,0,0.9),rgba(0,0,0,0.9)),url('images/hero page/QI6EY2NPPVAGNJ4YHA4RPKQPBI.jpg');
+    background-color: #2B2D42;
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
