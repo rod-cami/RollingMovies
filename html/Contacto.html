@@ -19,25 +19,25 @@
       Contactar con el servicio al cliente
     </div>
     <div class="cointainer colorLetra d-flex m-3 ">
-      <form class="justify-content-center col-12 needs-validation">
+      <form class="justify-content-center col-12 needs-validation" action="https://formsubmit.co/juanjose91_blg@hotmail.com" method="POST" target="_blank">
         <div class="mb-4">
           <label for="exampleInputPassword1" class="form-label">Nombre</label>
-          <input type="text" id="nombre" class="form-control" placeholder="Juan Perez" minlength="4" maxlength="25" required>
+          <input type="text" name="Nombre" class="form-control" placeholder="Juan Perez" minlength="4" maxlength="25" required>
         </div>
         <div class="mb-4">
           <label for="exampleInputEmail1" class="form-label">Email</label>
-          <input type="email" class="form-control " id="email" placeholder="ejemplo@email.com" minlength="2" maxlength="25" required>
+          <input type="email" class="form-control " name="Email" placeholder="ejemplo@email.com" minlength="2" maxlength="25" required>
         </div>
         <div class="mb-4">
           <label for="exampleInputPassword1" class="form-label">Motivo</label>
-          <input type="text" id="asunto" class="form-control" placeholder="Duda / consulta" minlength="4" maxlength="40" required>
+          <input type="text" name="Asunto" class="form-control" placeholder="Duda / consulta" minlength="4" maxlength="40" required>
         </div>
         <div class="mb-4">
           <label for="exampleInputEmail1" class="form-label">Mensaje</label>
-          <textarea class="form-control" placeholder="Mensaje..." maxlength="100" minlength="10" id="mensaje" rows="4" required></textarea>
+          <textarea class="form-control" placeholder="Mensaje..." maxlength="100" minlength="10" name="Mensaje" rows="4" required></textarea>
         </div>
         <div>
-          <button type="submit" class="btn btn-primary mt-3" onclick="enviarMail()">Enviar <i class="bi bi-telegram"></i></button>
+          <button type="submit" class="btn btn-primary mt-3">Enviar <i class="bi bi-telegram"></i></button>
       </form>
     </div>
   </section>
