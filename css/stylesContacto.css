@@ -4,28 +4,14 @@
   align-items: center;
   width: 100%;
   height: 100vh;
-  background-color: #8D99AE;
+  background-color: #383a57;
   color: white;
 }
 
 .colorLetra{
-  color: #2B2D42;
+  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 
-.btn {
-  color: white;
-  text-align: center;
-  vertical-align: middle;
-  cursor: pointer;
-  border: 1px solid black;
-  border-radius: 10px;
-  background-color: #EF233C;
-}
-
-.btn:hover{
-  background-color: #D90429;
-  border: 1px solid #D90429;
-}
