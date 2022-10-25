@@ -17,6 +17,7 @@ async function inicioSesion(e) {
   }
   if (user.password === passwordLogin) {
     localStorage.setItem('role', user.role)
+    localStorage.setItem('name', user.username)
     if (user.role == "admin") {
       window.location.href = "../html/pageAdmin.html"
     } else {

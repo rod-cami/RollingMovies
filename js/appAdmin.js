@@ -265,6 +265,8 @@ const eliminarPelicula = async (id) => {
 const seleccionarFavorito = async (id) =>{
   let pelicula = await obtenerUnaPelicula(id);
   let banFavorito, banDesfavorito;
+  let favoritos = await listadoFavorito();
+
   if (pelicula.favorito === false) {
     await Swal.fire({
       title: 'Marcar favorito',
@@ -296,7 +298,7 @@ const seleccionarFavorito = async (id) =>{
       }
     })
   }
-  if (banFavorito) {
+  if (banFavorito && favoritos) {
     await Swal.fire({
       title: 'Marcado como Favorito',
       text: "La película se marcó como favorito",
@@ -312,6 +314,14 @@ const seleccionarFavorito = async (id) =>{
       headers: {
         'Content-type': 'application/json; charset=UTF-8',
       },
+    })
+  }else if(banFavorito && !favoritos){
+    await Swal.fire({
+      title: 'Debe desmarcar',
+      text: "Ya se encuentra una pelicula seleccionada como favorito, porfavor desmarque",
+      icon: 'error',
+      confirmButtonColor: '#2B2D42',
+      confirmButtonText: 'Ok'
     })
   }
   if (banDesfavorito) {
@@ -331,6 +341,25 @@ const seleccionarFavorito = async (id) =>{
         'Content-type': 'application/json; charset=UTF-8',
       },
     })
+  }
+}
+
+const listadoFavorito = async () =>{
+  let peliculas = await obtenerPeliculas();
+  let bandera = 0;
+
+  await peliculas.map(x => {
+    if (x.favorito === true) {
+      bandera++;
+    }
+  })
+
+  console.log(bandera);
+
+  if (bandera >= 1) {
+    return false;
+  }else{
+    return true;
   }
 }
 
@@ -443,13 +472,5 @@ function validarAno(input) {
   }else{
     input.className = 'form-control is-invalid';
     return false
-  }
-}
-
-const isAdmin = () => {
-  const role = localStorage.getItem('role')
-
-  if (role !== 'admin') {
-    window.location.href = '../html/index.html'
   }
 }
