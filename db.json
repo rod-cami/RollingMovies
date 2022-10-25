@@ -8,7 +8,7 @@
       "portada": "https://www.themoviedb.org/t/p/w600_and_h900_bestv2/zfC8bfoMZhaCxswi41CjesysfhZ.jpg",
       "direccion": "Erik Van Looy",
       "actores": "Liam Neeson, Monica Belluci, Taj Atwal",
-      "ano": 2022,
+      "ano": "2022",
       "clasificacion": "R",
       "estado": true,
       "favorito": true,
@@ -724,17 +724,17 @@
       "id": 3
     },
     {
-      "email": "",
-      "username": "",
-      "password": "",
-      "role": "",
+      "email": "alexa@gmail.com",
+      "username": "Alexa",
+      "password": "User1234*",
+      "role": "user",
       "id": 4
     },
     {
-      "email": "",
-      "username": "",
-      "password": "",
-      "role": "",
+      "email": "Pedro@gmail.com",
+      "username": "Pedro",
+      "password": "User1234*",
+      "role": "user",
       "id": 5
     }
   ]
