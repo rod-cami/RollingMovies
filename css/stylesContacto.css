@@ -1,3 +1,18 @@
+@font-face {
+  font-family: CercoDEMO-Medium;
+  src: url(../fuentes/CercoDEMO-Medium.otf);
+}
+
+@font-face {
+  font-family: CercoDEMO-Regular;
+  src: url(../fuentes/CercoDEMO-Regular.otf);
+}
+
+@font-face {
+  font-family: CercoDEMO-Light;
+  src: url(../fuentes/CercoDEMO-Light.otf);
+}
+
 *{
   font-family: 'Open Sans', sans-serif;
 }

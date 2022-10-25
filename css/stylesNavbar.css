@@ -1,3 +1,19 @@
+@font-face {
+  font-family: CercoDEMO-Medium;
+  src: url(../fuentes/CercoDEMO-Medium.otf);
+}
+
+@font-face {
+  font-family: CercoDEMO-Regular;
+  src: url(../fuentes/CercoDEMO-Regular.otf);
+}
+
+@font-face {
+  font-family: CercoDEMO-Light;
+  src: url(../fuentes/CercoDEMO-Light.otf);
+}
+
 .fondoNavbar{
   background-color: #2B2D42;
+  font-family: CercoDEMO-Regular;
 }
